@@ -1,0 +1,37 @@
+@use "../global" as *;
+
+.about-section-4 {
+    padding-block-start: rem(120);
+    position: relative;
+    z-index: 1;
+    @include screen(lg) {
+        padding-block-start: rem(180);
+    }
+    .about-section-4-shape {
+        position: absolute;
+        z-index: -1;
+        &-top {
+            inset-block-start: 0;
+            inset-inline-start: 50%;
+            transform: translateX(-50%);
+        }
+        &-left {
+            inset-block-start: 0;
+            inset-inline-start: 0;
+        }
+        &-right {
+            inset-block-start: 0;
+            inset-inline-end: 0;
+        }
+        &-line-left {
+            inset-block-start: 0;
+            inset-inline-start: 0;
+            opacity: 0.05;
+        }
+        &-line-right {
+            inset-block-start: 0;
+            inset-inline-end: 0;
+            opacity: 0.05;
+        }
+    }
+}

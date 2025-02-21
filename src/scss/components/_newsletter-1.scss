@@ -1,0 +1,45 @@
+.newsletter-1 {
+	--border-width: 1px;
+	padding: var(--border-width);
+	&::after {
+		content: "";
+		position: absolute;
+		left: -50%;
+		top: -50%;
+		width: 190%;
+		height: 190%;
+		background-color: transparent;
+		background-repeat: no-repeat;
+		background-size: 50% 50%, 50% 50%;
+		background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+		background-image: radial-gradient(circle, rgba(184, 228, 253, 0.911) 0%, rgba(252, 70, 107, 0) 71%),
+			linear-gradient(transparent, transparent), linear-gradient(transparent, transparent),
+			linear-gradient(transparent, transparent);
+		animation: borderRotate 5s linear infinite;
+		z-index: -1;
+		pointer-events: none;
+	}
+	&__input {
+		border: 0;
+		font-family: var(--ff-3);
+		&:focus {
+			box-shadow: none;
+			border: 0;
+			color: hsl(var(--neutral-60));
+		}
+		&::placeholder {
+			color: hsl(var(--neutral-60));
+		}
+	}
+	&__btn {
+		border: 0;
+		border-radius: 0.25rem;
+	}
+	&--alt {
+		.newsletter-1__input {
+			&::placeholder {
+				color: hsl(var(--primary-80));
+			}
+		}
+	}
+}

@@ -1,0 +1,51 @@
+.custom-accordion {
+	--bs-accordion-active-bg: transparent;
+	--bs-accordion-active-color: hsl(var(--primary));
+	--bs-accordion-inner-border-radius: 0;
+	--bs-accordion-border-radius: 0;
+	--bs-accordion-btn-focus-border-color: var(--bs-border-color);
+	&--faq {
+		--bs-accordion-bg: hsl(var(--black));
+		--bs-accordion-border-color: hsl(var(--neutral-10));
+		--bs-accordion-btn-color: hsl(var(--neutral-80));
+		--bs-accordion-color: hsl(var(--neutral-80));
+		--bs-accordion-active-color: hsl(var(--secondary-key));
+		--bs-accordion-btn-padding-y: 1.5rem;
+		--bs-accordion-body-padding-y: 1.5rem;
+		.accordion-button {
+			&:not(.collapsed) {
+				&::after {
+					content: "\F63B";
+				}
+			}
+			&::after {
+				content: "\F64D";
+				display: inline-block;
+				font-family: bootstrap-icons !important;
+				font-style: normal;
+				font-weight: 400 !important;
+				font-variant: normal;
+				text-transform: none;
+				line-height: 1;
+				vertical-align: -0.125em;
+				background: none;
+			}
+		}
+		.accordion-body {
+			padding-top: 0;
+		}
+	}
+	.accordion-item {
+		&:not(:first-of-type) {
+			border-top: 1px solid var(--bs-accordion-border-color);
+		}
+	}
+	.accordion-button {
+		&:not(.collapsed) {
+			box-shadow: none;
+		}
+		&:focus {
+			box-shadow: none;
+		}
+	}
+}

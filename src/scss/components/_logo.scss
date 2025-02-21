@@ -1,0 +1,10 @@
+@use "../global" as *;
+.logo {
+	--logo-height: #{rem(48)};
+	height: var(--logo-height);
+	&__img {
+		max-width: 100%;
+		max-height: 100%;
+		object-fit: contain;
+	}
+}

@@ -1,0 +1,178 @@
+// Typography
+p {
+	margin: 0 0 1rem;
+	font-weight: 400;
+}
+
+.d1,
+.d2,
+.d3,
+.d4 {
+	margin: 0 0 1rem;
+	font-family: var(--ff-1);
+	font-weight: 700;
+	line-height: 1.2;
+	color: hsl(var(--on-surface));
+}
+
+.d1 {
+	font-size: var(--d1);
+}
+
+.d2 {
+	font-size: var(--d2);
+}
+
+.d3 {
+	font-size: var(--d3);
+}
+
+.d4 {
+	font-size: var(--d4);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0 0 1rem;
+	font-family: var(--ff-1);
+	font-weight: 700;
+	line-height: 1.2;
+	color: hsl(var(--on-surface));
+}
+
+h1,
+.h1 {
+	font-size: var(--h1);
+}
+
+h2,
+.h2 {
+	font-size: var(--h2);
+}
+
+h3,
+.h3 {
+	font-size: var(--h3);
+}
+
+h4,
+.h4 {
+	font-size: var(--h4);
+}
+
+h5,
+.h5 {
+	font-size: var(--h5);
+}
+
+h6,
+.h6 {
+	font-size: var(--h6);
+	letter-spacing: 0.05em;
+	line-height: 1.5;
+}
+
+.fw-extrabold {
+	font-weight: 900;
+}
+
+.fs-10 {
+	font-size: 0.625rem;
+}
+
+.fs-12 {
+	font-size: 0.75rem;
+}
+
+small,
+.fs-14 {
+	font-size: 0.875rem;
+}
+
+.fs-16 {
+	font-size: 1rem;
+}
+
+.fs-18 {
+	font-size: 1.125rem;
+}
+
+.fs-20 {
+	font-size: 1.25rem;
+}
+
+.fs-24 {
+	font-size: 1.5rem;
+}
+
+.fs-32 {
+	font-size: 2rem;
+}
+
+.fs-36 {
+	font-size: 2.25rem;
+}
+
+.fs-40 {
+	font-size: 2.5rem;
+}
+
+.fs-44 {
+	font-size: 2.75rem;
+}
+
+.fs-48 {
+	font-size: 3rem;
+}
+
+.fs-52 {
+	font-size: 3.25rem;
+}
+
+.fs-56 {
+	font-size: 3.5rem;
+}
+
+.fs-60 {
+	font-size: 3.75rem;
+}
+
+.max-text-20 {
+	max-width: 20ch;
+}
+
+.max-text-24 {
+	max-width: 24ch;
+}
+
+.max-text-32 {
+	max-width: 32ch;
+}
+
+.max-text-40 {
+	max-width: 40ch;
+}
+
+.max-text-50 {
+	max-width: 50ch;
+}
+
+.max-text-60 {
+	max-width: 60ch;
+}
+
+.max-text-70 {
+	max-width: 70ch;
+}
+
+.max-text-80 {
+	max-width: 80ch;
+}
+
+.max-text-90 {
+	max-width: 90ch;
+}

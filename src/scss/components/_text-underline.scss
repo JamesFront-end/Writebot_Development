@@ -1,0 +1,16 @@
+@use "../global" as *;
+.text-underline {
+	--content: url(../img/text-underline-1.svg);
+	position: relative;
+	isolation: isolate;
+	&::after {
+		@include screen(md) {
+			content: var(--content);
+			max-width: 100%;
+			position: absolute;
+			inset-inline: 0;
+			inset-block-end: 0;
+			transform: translateY(50%);
+		}
+	}
+}

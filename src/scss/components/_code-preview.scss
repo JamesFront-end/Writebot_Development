@@ -1,0 +1,42 @@
+@use "../global" as *;
+.code-preview {
+	&__header {
+		border-bottom: 1px solid hsl(var(--outline) / 0.25);
+	}
+	&__link {
+		&.active {
+			position: relative;
+			isolation: isolate;
+			color: hsl(var(--primary));
+			&::after {
+				content: "";
+				position: absolute;
+				inset-inline: 0;
+				inset-block-start: calc(100% - 1px);
+				height: 2px;
+				background-color: hsl(var(--primary));
+			}
+		}
+	}
+	:not(pre) > code[class*="language-"],
+	pre[class*="language-"] {
+		background-color: transparent;
+	}
+	pre {
+		scrollbar-color: hsl(var(--neutral-50)) hsl(var(--neutral-30));
+		scrollbar-width: thin;
+
+		&::-webkit-scrollbar {
+			width: 0.5rem;
+			height: 0.5rem;
+		}
+
+		&::-webkit-scrollbar-track {
+			background: hsl(var(--neutral-30));
+		}
+
+		&::-webkit-scrollbar-thumb {
+			background: hsl(var(--neutral-50));
+		}
+	}
+}

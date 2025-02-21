@@ -1,0 +1,52 @@
+@use "../global" as *;
+.faq-section-2 {
+	position: relative;
+	isolation: isolate;
+	background-color: hsl(var(--black));
+	&__inner {
+		position: relative;
+		isolation: isolate;
+		&::before {
+			content: "";
+			position: absolute;
+			inset-inline-start: -25%;
+			inset-block-start: 0;
+			width: 150%;
+			aspect-ratio: 1;
+			border-radius: 50%;
+			background-image: linear-gradient(
+				90deg,
+				rgba(77, 137, 249, 0) 12%,
+				rgba(112, 78, 231, 1) 32%,
+				rgba(232, 66, 140, 1) 68%,
+				rgba(237, 109, 75, 0) 87%
+			);
+			animation: rotate360 10s linear infinite;
+			transform-origin: center;
+			transform-box: fill-box;
+			z-index: -2;
+		}
+		&::after {
+			content: "";
+			position: absolute;
+			inset-inline-start: 50%;
+			inset-block-start: 0.5rem;
+			transform: translateX(-50%);
+			width: 150%;
+			aspect-ratio: 1;
+			border-radius: 50%;
+			background: hsl(var(--black));
+			z-index: -1;
+		}
+	}
+	&__img {
+		width: 100%;
+		object-fit: cover;
+		position: absolute;
+		inset-block-end: 0;
+		inset-inline-start: 50%;
+		transform: translate(-50%);
+		z-index: -1;
+		pointer-events: none;
+	}
+}

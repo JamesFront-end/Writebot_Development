@@ -1,0 +1,21 @@
+@use "../global" as *;
+.featured-lists {
+	& + .featured-lists {
+		@include screen(xl) {
+			position: relative;
+			isolation: isolate;
+			&::after {
+				content: "";
+				position: absolute;
+				inset-block-start: 50%;
+				inset-inline-start: 0;
+				transform: translate(-50%, -50%);
+				width: 2rem;
+				height: 2rem;
+				border-radius: 50%;
+				background-color: hsl(var(--neutral-variant-30));
+				z-index: 1;
+			}
+		}
+	}
+}

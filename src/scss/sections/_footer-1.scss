@@ -1,0 +1,48 @@
+@use "../global" as *;
+.footer-1 {
+	@include screen(xl) {
+		&::before {
+			content: "";
+			position: absolute;
+			inset-inline-start: 50%;
+			inset-block-start: 0;
+			width: 100px;
+			height: 2px;
+			background: radial-gradient(circle, #4400d9 0%, transparent 70%);
+			animation: leftToRight 30s linear infinite alternate;
+			z-index: 1;
+			pointer-events: none;
+		}
+	}
+	&__top {
+		@include screen(xl) {
+			&::before {
+				content: "";
+				position: absolute;
+				inset-inline-start: 50%;
+				inset-block-start: 0;
+				width: 1px;
+				height: 100px;
+				background: radial-gradient(circle, #00b8d9 0%, transparent 70%);
+				animation: topToBottom 20s linear infinite alternate;
+				z-index: 1;
+				pointer-events: none;
+			}
+			&::after {
+				content: "";
+				position: absolute;
+				inset-block: 0;
+				inset-inline-start: 50%;
+				width: 1px;
+				background-color: hsl(var(--neutral-10));
+			}
+		}
+	}
+	&__shape {
+		position: absolute;
+		inset-inline-end: 0;
+		inset-block-end: 0;
+        z-index: -1;
+        pointer-events: none;
+	}
+}

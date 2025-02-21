@@ -1,0 +1,27 @@
+@use "../global" as *;
+
+.home-7-section-top-border {
+    &::after {
+        position: absolute;
+        content: '';
+        inset-block-start: 0;
+        inset-inline-start: 50%;
+        transform: translateX(-50%);
+        width: 300px;
+        height: 1px;
+        background: linear-gradient(90deg, rgba(72, 69, 78, 0.00) 0%, #48454E 48.34%, rgba(72, 69, 78, 0.00) 102%);
+        z-index: -1;
+        @include screen(sm) {
+            width: 500px;
+        }
+        @include screen(md) {
+            width: 700px;
+        }
+        @include screen(xl) {
+            width: 900px;
+        }
+        @include screen(xxl) {
+            width: 1200px;
+        }
+    }
+}

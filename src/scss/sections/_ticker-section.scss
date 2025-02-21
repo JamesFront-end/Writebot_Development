@@ -1,0 +1,15 @@
+.ticker-section {
+	&__content {
+		position: relative;
+		isolation: isolate;
+		transform: rotate(-3deg);
+		&::after {
+			content: "";
+			position: absolute;
+			inset-block-start: 0;
+			inset-inline: 0;
+			height: 0.5rem;
+			background: linear-gradient(270deg, #f22fb0 0.48%, #ff7426 93.92%);
+		}
+	}
+}

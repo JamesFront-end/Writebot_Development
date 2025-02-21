@@ -1,0 +1,26 @@
+.footer-inner {
+    position: relative;
+    z-index: 1;
+    .footer-inner-shape {
+        position: absolute;
+        z-index: -1;
+        &-left {
+            inset-block-end: 0;
+            inset-inline-start: 0;
+        }
+        &-line-left {
+            inset-block-end: 0;
+            inset-inline-start: 0;
+            opacity: 0.05;
+        }
+        &-line-right {
+            inset-block-end: 0;
+            inset-inline-end: 0;
+            opacity: 0.05;
+        }
+        &-right {
+            inset-block-end: 0;
+            inset-inline-end: 0;
+        }
+    }
+}

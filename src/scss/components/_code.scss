@@ -1,0 +1,8 @@
+.code {
+	display: inline-block;
+	padding-inline: 0.5rem;
+	border-radius: 2px;
+	background-color: hsl(var(--surface-container));
+    font-family: var(--ff-2);
+	color: hsl(var(--on-surface));
+}

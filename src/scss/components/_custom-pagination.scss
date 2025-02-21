@@ -1,0 +1,91 @@
+@use "../global" as *;
+.custom-pagination {
+	--bs-pagination-padding-x: 0.5rem;
+	--bs-pagination-padding-y: 0.5rem;
+	--bs-pagination-font-size: 14px;
+	--bs-pagination-color: hsl(var(--on-background));
+	--bs-pagination-bg: hsl(var(--background));
+	--pagination-size: 2rem;
+	--bs-pagination-active-bg: hsl(var(--primary));
+	--bs-pagination-active-border-color: hsl(var(--primary));
+	margin: 0;
+	flex-wrap: wrap;
+	line-height: 1;
+	&-sm {
+		--pagination-size: 1.5rem;
+		--bs-pagination-font-size: 12px;
+		--bs-pagination-padding-x: 0.25rem;
+		--bs-pagination-padding-y: 0.25rem;
+	}
+	&-lg {
+		--pagination-size: 2.5rem;
+		--bs-pagination-font-size: 1rem;
+		--bs-pagination-padding-x: 0.25rem;
+		--bs-pagination-padding-y: 0.25rem;
+	}
+	.page-link {
+		display: grid;
+		place-content: center;
+		width: var(--pagination-size);
+		height: var(--pagination-size);
+	}
+	&-separated {
+		.page-item {
+			&:first-child {
+				.page-link {
+					border-top-left-radius: 0;
+					border-bottom-left-radius: 0;
+				}
+			}
+			&:last-child {
+				.page-link {
+					border-top-right-radius: 0;
+					border-bottom-right-radius: 0;
+				}
+			}
+		}
+	}
+	&-border-0 {
+		--bs-pagination-border-width: 0;
+		--bs-pagination-border-color: transparent;
+		.page-link {
+			text-decoration: underline;
+		}
+	}
+	@each $color, $shades in $colors {
+		@each $shade, $value in $shades {
+			&.#{$color}-#{$shade} {
+				color: hsl(var(--#{$color}-#{$shade}));
+				--bs-pagination-active-bg: hsl(var(--#{$color}-#{$shade}));
+				--bs-pagination-active-border-color: hsl(var(--#{$color}-#{$shade}));
+				--bs-pagination-hover-bg: hsl(var(--#{$color}-#{$shade}));
+			}
+		}
+	}
+	@each $color, $shades in $colors {
+		@each $shade, $value in $shades {
+			&.soft-#{$color}-#{$shade} {
+				color: hsl(var(--#{$color}-#{$shade}));
+				--bs-pagination-active-color: hsl(var(--#{$color}-#{$shade}));
+				--bs-pagination-active-bg: hsl(var(--#{$color}-#{$shade}) / 0.1);
+				--bs-pagination-hover-color: hsl(var(--#{$color}-#{$shade}));
+				--bs-pagination-hover-bg: hsl(var(--#{$color}-#{$shade}) / 0.1);
+				--bs-pagination-active-border-color: hsl(var(--#{$color}-#{$shade}) / 0.025);
+				--bs-pagination-hover-border-color: hsl(var(--#{$color}-#{$shade}) / 0.025);
+			}
+		}
+	}
+	@each $color, $shades in $colors {
+		@each $shade, $value in $shades {
+			&.soft-outline-#{$color}-#{$shade} {
+				color: hsl(var(--#{$color}-#{$shade}));
+				--bs-pagination-active-color: hsl(var(--#{$color}-#{$shade}));
+				--bs-pagination-active-bg: hsl(var(--#{$color}-#{$shade}) / 0.1);
+				--bs-pagination-hover-color: hsl(var(--#{$color}-#{$shade}));
+				--bs-pagination-hover-bg: hsl(var(--#{$color}-#{$shade}) / 0.1);
+				--bs-pagination-active-border-color: hsl(var(--#{$color}-#{$shade}) / 0.5);
+				--bs-pagination-hover-border-color: hsl(var(--#{$color}-#{$shade}) / 0.5);
+			}
+		}
+	}
+}

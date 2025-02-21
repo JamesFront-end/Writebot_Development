@@ -1,0 +1,73 @@
+@use "../global" as *;
+.newsletter-section-1 {
+	position: relative;
+	&::before {
+		@include screen(xl) {
+			content: "";
+			position: absolute;
+			inset-inline-start: 0;
+			inset-inline-end: -50%;
+			inset-block-start: 0;
+			inset-block-end: 0;
+			background: linear-gradient(
+				90deg,
+				rgba(106, 65, 251, 1) 5%,
+				rgba(244, 89, 194, 1) 25%,
+				rgba(244, 153, 89, 0.75) 60%,
+				rgba(244, 153, 89, 0.25) 100%
+			);
+			background-size: 125%;
+			background-position: left;
+			background-repeat: no-repeat;
+			border-radius: 2rem 0 0 0;
+			animation: animateGradientBg 10s linear infinite alternate;
+			z-index: -3;
+			pointer-events: none;
+		}
+	}
+	&::after {
+		@include screen(xl) {
+			content: "";
+			position: absolute;
+			inset-inline-start: 0.75rem;
+			inset-inline-end: -50%;
+			inset-block-start: 0.75rem;
+			inset-block-end: 0;
+			background: hsl(var(--black));
+			border-radius: 2rem 0 0 0;
+			z-index: -2;
+			pointer-events: none;
+		}
+	}
+	&__img {
+		@include screen(xl) {
+			position: absolute;
+		}
+		&-container {
+			position: relative;
+			isolation: isolate;
+		}
+		&--1 {
+			@include screen(xl) {
+				inset-inline-start: 0;
+				inset-block-start: 0;
+				transform: translate(-25%, -2rem);
+			}
+		}
+		&--2 {
+			@include screen(xl) {
+				inset-inline-end: 0;
+				inset-block-end: 2rem;
+				transform: translateX(25%);
+			}
+		}
+	}
+	&__shape {
+		position: absolute;
+		inset-block-start: 50%;
+		inset-inline-end: 0;
+		transform: translateY(-50%);
+		z-index: -1;
+		pointer-events: none;
+	}
+}

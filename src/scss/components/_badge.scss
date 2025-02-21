@@ -1,0 +1,21 @@
+@use "../global" as *;
+.badge {
+	--bs-badge-padding-x: 0.5rem;
+	--bs-badge-padding-y: 0.25rem;
+	@each $color, $shades in $colors {
+		@each $shade, $value in $shades {
+			&-#{$color}-#{$shade} {
+				--bg-opacity: 1;
+				background-color: hsl(var(--#{$color}-#{$shade}) / var(--bg-opacity));
+			}
+		}
+	}
+	@each $color, $shades in $bs-colors {
+		@each $shade, $value in $shades {
+			&-#{$color}-#{$shade} {
+				--bg-opacity: 1;
+				background-color: hsl(var(--#{$color}-#{$shade}) / var(--bg-opacity));
+			}
+		}
+	}
+}

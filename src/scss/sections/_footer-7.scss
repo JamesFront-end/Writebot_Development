@@ -1,0 +1,95 @@
+@use "../global" as *;
+
+.footer-7 {
+    position: relative;
+    z-index: 1;
+    padding-block-start: rem(230);
+    overflow: hidden;
+    @include screen(md) {
+        padding-block-start: rem(370);
+    }
+    &::before {
+        position: absolute;
+        content: '';
+        inset-block-end: -200px;
+        inset-inline-start: 50%;
+        transform: translateX(-50%);
+        width: 605px;
+        height: 605px;
+        border: 1px solid #48454E;
+        opacity: 0.2;
+        background: radial-gradient(55.14% 55.9% at 50% 35.04%, #5C2BFF 0%, rgba(92, 43, 255, 0.00) 76.7%);
+        border-radius: 50%;
+        z-index: -3;
+        display: none;
+        @include screen(md) {
+            display: block;
+        }
+    }
+    .footer-7-wrapper {
+        padding-block-start: rem(40);
+        padding-block-end: rem(20);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position-x: center;
+        background-color: #000;
+        border-top: 1px solid #363636;
+        @include screen(xl) {
+            background-image: url('../img/footer-7-shape-bottom.png');
+            border: none;
+            background-color: transparent;
+        }
+
+    }
+    .radar-logo-wrapper {
+        position: absolute;
+        inset-block-end: 70px;
+        inset-inline-start: 50%;
+        transform: translateX(-50%);
+        z-index: -2;
+        @include screen(lg) {
+            inset-block-end: 35px;
+        }
+        .logo-wrapper {
+            width: 80px;
+            height: 80px;
+            &::before {
+                border-radius: 30px;
+            }
+            &::after {
+                width: 55px;
+                height: 55px;
+                border-radius: 20px;
+            }
+            img {
+                max-width: 30px;
+                max-height: 21px;
+            }
+        }
+    }
+    .footer-7-shape {
+        position: absolute;
+        z-index: -1;
+        &-bottom {
+            inset-block-end: 0;
+            inset-inline-start: 0;
+            width: 100%;
+        }
+        &-bottom-circle {
+            inset-block-end: 0;
+            inset-inline-start: 50%;
+            transform: translateX(-50%);
+            z-index: -2;
+        }
+        &-left {
+            inset-block-end: 0;
+            inset-inline-start: 0;
+            z-index: -2;
+        }
+        &-right {
+            inset-block-end: 0;
+            inset-inline-end: 0;
+            z-index: -2;
+        }
+    }
+}

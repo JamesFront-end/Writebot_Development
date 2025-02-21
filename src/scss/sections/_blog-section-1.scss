@@ -1,0 +1,27 @@
+@use "../global" as *;
+.blog-section-1 {
+	position: relative;
+	isolation: isolate;
+	@include screen(xl) {
+		overflow: hidden;
+	}
+	&__img {
+		display: none;
+		@include screen(xl) {
+			display: inline-block;
+			position: absolute;
+			z-index: -1;
+			pointer-events: none;
+			&--1 {
+				inset-block-start: 50%;
+				inset-inline-start: 0;
+                transform: translateY(-50%);
+			}
+			&--2 {
+				inset-block-start: 50%;
+				inset-inline-end: 0;
+				transform: translateY(-50%);
+			}
+		}
+	}
+}

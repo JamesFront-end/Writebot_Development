@@ -1,0 +1,33 @@
+.gradient-btn-4 {
+	position: relative;
+	isolation: isolate;
+	&:hover {
+		&::before {
+			opacity: 1;
+		}
+	}
+	&::before {
+		content: "";
+		position: absolute;
+		inset: 0;
+		z-index: -1;
+		border-radius: inherit;
+		background: linear-gradient(270deg, #4d89f9 1.21%, #704ee7 21.78%, #e8428c 71.65%, #ed6d4b 100%);
+		opacity: 0.15;
+		background-size: 100%;
+		background-position: center;
+		transition: all 0.5s ease;
+	}
+	&::after {
+		content: "";
+		position: absolute;
+		inset: 0;
+		border: 1px solid transparent;
+		border-radius: inherit;
+		background: linear-gradient(270deg, #4d89f9 1.21%, #704ee7 21.78%, #e8428c 71.65%, #ed6d4b 100%) border-box;
+		-webkit-mask: linear-gradient(hsl(var(--black)) 0 0) padding-box, linear-gradient(hsl(var(--black)) 0 0);
+		-webkit-mask-composite: xor;
+		mask-composite: exclude;
+		z-index: -1;
+	}
+}

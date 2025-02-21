@@ -1,0 +1,36 @@
+@use "../global" as *;
+.client-list {
+	@include screen(lg) {
+		position: absolute;
+		&--1 {
+			inset-inline-start: 5%;
+			inset-block-start: 50%;
+			transform: translateY(-50%);
+		}
+		&--2 {
+			inset-inline-start: 20%;
+			inset-block-start: 35%;
+		}
+		&--3 {
+			inset-inline-start: 40%;
+			inset-block-start: 30%;
+		}
+		&--4 {
+			inset-inline-start: 25%;
+			inset-block-end: 20%;
+		}
+		&--5 {
+			inset-inline-start: 50%;
+			inset-block-start: 60%;
+			transform: translate(-50%, -50%);
+		}
+		&--6 {
+			inset-inline-end: 30%;
+			inset-block-start: 35%;
+		}
+		&--7 {
+			inset-inline-end: 15%;
+			inset-block-start: 55%;
+		}
+	}
+}

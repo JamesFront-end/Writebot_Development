@@ -1,0 +1,130 @@
+@use "../global" as *;
+
+.single-blog-area {
+    position: relative;
+    z-index: 1;
+}
+
+.blog-latest-thumb {
+    position: relative;
+}
+
+.blog-latest-label {
+    position: absolute;
+    padding: rem(6) rem(30) rem(6) rem(50);
+    color: #fff;
+    font-weight: 700;
+    inset-block-start: 23px;
+    inset-inline-end: -26px;
+    transform: rotate(38deg);
+    z-index: 1;
+    &::before {
+        position: absolute;
+        content: '';
+        inset-block-start: 0;
+        inset-inline-start: 0;
+        width: 100%;
+        height: 100%;
+        clip-path: polygon(26% 0, 87% 0, 100% 100%, 0% 100%);
+        background: linear-gradient(270deg, #4D89F9 1.21%, #704EE7 21.78%, #E8428C 71.65%, #ED6D4B 100%);
+        z-index: -1;
+    }
+    &::after {
+        position: absolute;
+        content: '';
+        inset-block-end: -11px;
+        inset-inline-end: 0;
+        width: 12px;
+        height: 16.5px;
+        background-color: #003EB3;
+        clip-path: polygon(100% 50%, 0 0, 0 100%);
+        z-index: -2;
+        transform: rotate(-34deg);
+    }
+}
+
+.blog-latest-content {
+    padding-block: rem(20);
+}
+
+.blog-tag {
+    padding: rem(8) rem(16);
+    border-radius: 8px;
+    border-left: 1.2px solid #FFF;
+    background: rgba(255, 255, 255, 0.04);
+    color: #fff;
+    display: inline-flex;
+    font-size: rem(14);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    transition: all 0.3s;
+    &:hover {
+        color: hsl(var(--primary-key));
+    }
+}
+
+.dot-pagination {
+    position: static;
+    margin-top: rem(10);
+    @include screen(xl) {
+        margin-top: rem(20);
+    }
+    .swiper-pagination-bullet {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: #5C2BFF;
+        opacity: 0.5;
+        transition: all 0.3s;
+        &-active {
+            width: 18px;
+            opacity: 1;
+            border-radius: 99px;
+        }
+    }
+} 
+
+.number-pagination {
+    .page-item {
+        &.active {
+            .page-link {
+                background-color: hsl(var(--primary-key));
+            }
+        }
+        .page-link {
+            background-color: transparent;
+            border: none;
+            color: #fff;
+            font-size: rem(14);
+            font-weight: 600;
+            padding: rem(10) rem(18);
+            border-radius: 8px;
+        }
+    }
+}
+
+.author-thumb {
+    width: 136px;
+    height: 136px;
+}
+
+
+.comment-form {
+    input,
+    textarea {
+        color: hsl(var(--neutral-90));
+        &:focus {
+            color: hsl(var(--neutral-90));
+        }
+        &::placeholder {
+            color: hsl(var(--neutral-50));
+        }
+        &:-moz-placeholder {
+            color: hsl(var(--neutral-50));
+        }
+        &:-ms-input-placeholder {
+            color: hsl(var(--neutral-50));
+        }
+    }
+} 

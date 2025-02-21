@@ -1,0 +1,68 @@
+@use "../global" as *;
+
+.ai-image-section {
+    position: relative;
+    z-index: 1;
+    .ai-image-section-shape {
+        position: absolute;
+        z-index: -1;
+        &-top {
+            inset-block-start: 0;
+            inset-inline-start: 50%;
+            transform: translateX(-50%);
+        }
+        &-left {
+            inset-block-start: 0;
+            inset-inline-start: 0;
+        }
+        &-right {
+            inset-block-start: 0;
+            inset-inline-end: 0;
+        }
+    }
+}
+
+.feature-2-card {
+    &.style-two {
+        display: flex;
+        flex-flow: column;
+        height: 100%;
+        .feature-2-card-thumb {
+            height: 222px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: rem(20);
+            @include screen(md) {
+                padding: rem(30);
+            }
+        }
+        .feature-2-card-content {
+            flex-grow: 1;
+        }
+    }
+}
+
+.ai-image-slider-wrapper {
+    position: relative;
+    overflow: hidden;
+
+    .radar-logo-wrapper {
+        position: absolute;
+        inset-block-start: 50%;
+        inset-inline-start: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .ai-image-slide-overlay {
+        position: absolute;
+        inset-block-end: 0;
+        inset-inline-start: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        -o-object-fit: cover;
+        object-position: bottom;
+        -o-object-position: bottom;
+    }
+}

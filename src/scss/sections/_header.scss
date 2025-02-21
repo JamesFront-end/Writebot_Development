@@ -1,0 +1,449 @@
+@use "../global" as *;
+.header {
+	z-index: 999;
+	transition: all 0.3s ease;
+
+	&--fixed {
+		position: fixed;
+		width: 100%;
+	}
+
+	&--sticky {
+		position: sticky;
+		top: 0;
+	}
+
+	&--1 {
+		.menu-nav {
+			background-color: hsl(var(--neutral-4));
+			@include screen(lg) {
+				background-color: transparent;
+			}
+		}
+		.menu-link {
+			@include screen(lg) {
+				color: hsl(var(--white));
+				&:hover {
+					color: hsl(var(--primary-80));
+				}
+			}
+		}
+		.menu-sub {
+			background-color: hsl(var(--neutral-10));
+			box-shadow: 0 0.5rem 1rem hsl(var(--black) / 0.25);
+			&-link {
+				@include screen(lg) {
+					color: hsl(var(--white));
+					&:hover {
+						background-color: hsl(var(--neutral-17));
+					}
+				}
+			}
+		}
+	}
+
+	&--2 {
+		@include screen(lg) {
+			top: 44px;
+		}
+		.menu-nav {
+			& > .list {
+				@include screen(lg) {
+					background-color: hsl(var(--neutral-key));
+				}
+			}
+		}
+		.menu-link {
+			@include screen(lg) {
+				padding: 0.75rem 1.5rem;
+				color: hsl(var(--white));
+				&:hover {
+					color: hsl(var(--primary-80));
+				}
+			}
+		}
+		.menu-sub {
+			background-color: hsl(var(--neutral-key));
+			box-shadow: 0 0.5rem 1rem hsl(var(--black) / 0.25);
+			&-link {
+				@include screen(lg) {
+					color: hsl(var(--white));
+					&:hover {
+						background-color: hsl(var(--neutral-10));
+					}
+				}
+			}
+		}
+	}
+
+	&--3 {
+		.menu-nav {
+			& > .list {
+				@include screen(lg) {
+					background-color: hsl(var(--white));
+					outline: 0.5rem solid hsl(var(--primary-90));
+				}
+				&:last-child {
+					@include screen(lg) {
+						outline: none;
+					}
+				}
+			}
+		}
+		.menu-link {
+			@include screen(lg) {
+				padding: 0.5rem 1.5rem;
+				color: hsl(var(--primary-30));
+				&:hover {
+					color: hsl(var(--primary-key));
+				}
+			}
+		}
+		.menu-sub {
+			background-color: hsl(var(--neutral-key));
+			box-shadow: 0 0.5rem 1rem hsl(var(--black) / 0.25);
+			&-link {
+				@include screen(lg) {
+					color: hsl(var(--white));
+					&:hover {
+						background-color: hsl(var(--neutral-10));
+					}
+				}
+			}
+		}
+	}
+	&--4 {
+		top: rem(120);
+		@include screen(md) {
+			top: rem(50);
+		}
+		@include screen(lg) {
+			top: rem(60);
+		}
+		.menu-nav {
+			background-color: hsl(var(--neutral-4));
+			@include screen(lg) {
+				background-color: transparent;
+			}
+		}
+		.menu-link {
+			@include screen(lg) {
+				color: hsl(var(--white));
+				&:hover {
+					color: hsl(var(--primary-80));
+				}
+			}
+			&.active {
+				color: hsl(var(--primary-80));
+			}
+		}
+		.menu-sub {
+			background-color: hsl(var(--neutral-10));
+			box-shadow: 0 0.5rem 1rem hsl(var(--black) / 0.25);
+			&-link {
+				@include screen(lg) {
+					color: hsl(var(--white));
+					&:hover {
+						background-color: hsl(var(--neutral-17));
+					}
+				}
+			}
+		}
+	}
+
+	&--5 {
+		.menu-nav {
+			background-color: hsl(var(--surface));
+			@include screen(lg) {
+				background-color: transparent;
+			}
+			& > .list {
+				@include screen(lg) {
+					background-color: hsl(var(--white));
+				}
+				&:last-child {
+					@include screen(lg) {
+						outline: none;
+					}
+				}
+			}
+		}
+
+		.menu-list-border-none {
+			&::before {
+				display: none;
+			}
+		}
+		.menu-link {
+			@include screen(xs) {
+				color: hsl(var(--primary-10));
+			}
+			@include screen(lg) {
+				padding: 0.75rem 0.75rem;
+				color: hsl(var(--primary-10));
+				font-weight: 700;
+				font-family: var(--ff-1);
+				&:hover {
+					color: hsl(var(--primary-key));
+				}
+			}
+
+			@include screen(xl) {
+				padding: 0.75rem 1.5rem;
+			}
+		}
+
+		.menu-sub {
+			@include screen(xs) {
+				background-color: hsl(var(--white));
+			}
+			@include screen(lg) {
+				background-color: hsl(var(--white));
+				box-shadow: 0 0.5rem 1rem hsl(var(--black) / 0.25);
+			}
+			&-link {
+				@include screen(xs) {
+					color: hsl(var(--primary-10));
+				}
+				@include screen(lg) {
+					color: hsl(var(--neutral-key));
+					&:hover {
+						color: hsl(var(--primary-10));
+					}
+				}
+			}
+		}
+
+		.h5-btn-border-left {
+			border-left: 1.2px solid #fff;
+		}
+
+		.bg-white-12 {
+			background: rgba(255, 255, 255, 0.12);
+			&:hover {
+				background: hsl(var(--white));
+			}
+		}
+	}
+
+	&--7 {
+		@include screen(lg) {
+			top: 44px;
+		}
+		.logo {
+			img {
+				@include screen(lg) {
+					max-height: 21px;
+				}
+				@include screen(xl) {
+					max-height: auto;
+				}
+			}
+		}
+		.menu-nav {
+			& > .list {
+				@include screen(lg) {
+					background-color: hsl(var(--neutral-key));
+				}
+			}
+		}
+		.menu-list {
+			@include screen(xs) {
+				width: 100%;
+			}
+			@include screen(lg) {
+				width: auto;
+			}
+		}
+		.menu-link {
+			@include screen(lg) {
+				padding: 0.75rem 0.35rem;
+				color: #c4c7c7;
+				font-size: rem(14);
+				&:hover {
+					color: hsl(var(--white));
+				}
+			}
+			@include screen(xl) {
+				padding: 0.75rem 1rem;
+				font-size: rem(16);
+			}
+			@include screen(xxl) {
+				padding: 0.75rem 1.25rem;
+			}
+			&.menu-link-active {
+				color: hsl(var(--white));
+			}
+			&.h-select-link {
+				@include screen(xs) {
+					width: 100%;
+				}
+				@include screen(lg) {
+					padding: 0.75rem 0.35rem;
+					width: auto;
+				}
+				@include screen(xl) {
+					padding: 0.75rem 1rem;
+				}
+			}
+		}
+		.menu-sub {
+			background-color: hsl(var(--neutral-key));
+			box-shadow: 0 0.5rem 1rem hsl(var(--black) / 0.25);
+			&-link {
+				@include screen(lg) {
+					color: hsl(var(--white));
+					&:hover {
+						background-color: hsl(var(--neutral-10));
+					}
+				}
+			}
+		}
+		.h-select {
+			position: relative;
+			&::after {
+				position: absolute;
+				content: "\f282";
+				font-family: bootstrap-icons !important;
+				font-size: 12px;
+				font-style: normal;
+				font-weight: 400 !important;
+				font-variant: normal;
+				text-transform: none;
+				line-height: 1;
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+				inset-block-start: 30%;
+				inset-inline-end: 0;
+			}
+			i {
+				position: absolute;
+				inset-block-start: 0;
+				inset-inline-start: 0;
+				z-index: -1;
+			}
+			select {
+				padding-inline: rem(25) rem(18);
+				background-color: transparent;
+				border: none;
+				color: #c4c7c7;
+				-webkit-appearance: none;
+				appearance: none;
+				-moz-appearance: none;
+				width: 100%;
+				&:focus {
+					outline: none;
+				}
+				option {
+					color: hsl(var(--black));
+				}
+			}
+		}
+	}
+
+	&-crossed {
+		.header--fixed {
+			top: 0;
+			&::after {
+				content: "";
+				position: absolute;
+				inset: 0;
+				z-index: -1;
+			}
+		}
+
+		.header--1 {
+			&::after {
+				content: "";
+				position: absolute;
+				inset: 0;
+				z-index: -1;
+				background: rgba(0, 0, 0, 0.5);
+				box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+				backdrop-filter: blur(5px);
+				-webkit-backdrop-filter: blur(5px);
+			}
+		}
+		.header--2 {
+			top: 0;
+			&::after {
+				content: "";
+				position: absolute;
+				inset: 0;
+				z-index: -1;
+				background: rgba(0, 0, 0, 0.5);
+				box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+				backdrop-filter: blur(5px);
+				-webkit-backdrop-filter: blur(5px);
+			}
+		}
+		.header--3 {
+			top: 0;
+			&::after {
+				content: "";
+				position: absolute;
+				inset: 0;
+				z-index: -1;
+				background: rgba(255, 255, 255, 0.5);
+				box-shadow: 0 4px 30px rgba(255, 255, 255, 0.1);
+				backdrop-filter: blur(5px);
+				-webkit-backdrop-filter: blur(5px);
+			}
+		}
+		.header--4 {
+			&::after {
+				content: "";
+				position: absolute;
+				inset: 0;
+				z-index: -1;
+				background: rgba(0, 0, 0, 0.5);
+				box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+				backdrop-filter: blur(5px);
+				-webkit-backdrop-filter: blur(5px);
+			}
+		}
+
+		.header--5 {
+			top: 0;
+			@include screen(lg) {
+				padding-block: rem(15) !important;
+			}
+			&::after {
+				content: "";
+				position: absolute;
+				inset: 0;
+				z-index: -1;
+				background: rgba(255, 255, 255, 0.5);
+				box-shadow: 0 4px 30px rgba(255, 255, 255, 0.1);
+				backdrop-filter: blur(5px);
+				-webkit-backdrop-filter: blur(5px);
+			}
+		}
+
+		.header--7 {
+			top: 0;
+			&::after {
+				content: "";
+				position: absolute;
+				inset: 0;
+				z-index: -1;
+				background: rgba(0, 0, 0, 0.5);
+				box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+				backdrop-filter: blur(5px);
+				-webkit-backdrop-filter: blur(5px);
+			}
+		}
+
+		.header--sticky {
+			box-shadow: 0 0.25rem 1rem hsl(var(--black) / 0.05);
+		}
+
+		.header--doc {
+			background-color: hsl(var(--background));
+		}
+	}
+}
+
+.z-index-1 {
+	z-index: 1;
+}

@@ -1,0 +1,19 @@
+@use "../bootstrap" as *;
+
+@each $size, $value in $spacers {
+	// Width
+	.w-#{$size} {
+		width: $value;
+	}
+
+	// Height
+	.h-#{$size} {
+		height: $value;
+	}
+}
+.w-2px {
+	width: 2px;
+}
+.h-2px {
+	height: 2px;
+}

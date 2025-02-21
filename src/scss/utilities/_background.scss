@@ -1,0 +1,389 @@
+@use "../global" as *;
+@use "../bootstrap" as bs;
+
+@each $brand, $value in $brand-colors {
+	.bg-#{$brand} {
+		--bg-opacity: 1;
+		background: hsl(var(--#{$brand}) / var(--bg-opacity));
+	}
+	.\:bg-#{$brand} {
+		transition: all 0.3s ease;
+		&:hover {
+			--bg-opacity: 1;
+			background: hsl(var(--#{$brand}) / var(--bg-opacity));
+		}
+	}
+}
+
+@each $color, $shades in $colors {
+	@each $shade, $value in $shades {
+		.bg-#{$color}-#{$shade} {
+			--bg-opacity: 1;
+			background-color: hsl(var(--#{$color}-#{$shade}) / var(--bg-opacity));
+		}
+
+		.\:bg-#{$color}-#{$shade}:hover {
+			--bg-opacity: 1;
+			background-color: hsl(var(--#{$color}-#{$shade}) / var(--bg-opacity));
+		}
+	}
+}
+@each $color, $shades in $bs-colors {
+	@each $shade, $value in $shades {
+		.bg-#{$color}-#{$shade} {
+			--bg-opacity: 1;
+			background-color: hsl(var(--#{$color}-#{$shade}) / var(--bg-opacity));
+		}
+
+		.\:bg-#{$color}-#{$shade}:hover {
+			--bg-opacity: 1;
+			background-color: hsl(var(--#{$color}-#{$shade}) / var(--bg-opacity));
+		}
+	}
+}
+
+.bg-grad-1 {
+	background: linear-gradient(90deg, #6a41fb 30%, #f49959 70%);
+}
+a.bg-grad-1 {
+	background: linear-gradient(90deg, #6a41fb, #f49959, #6a41fb);
+	background-size: 200%;
+	transition: all 0.4s ease-in-out;
+	background-position: left;
+	&:hover {
+		background-position: right;
+		transition: all 0.4s ease-in-out;
+	}
+}
+
+button.bg-grad-1 {
+	background: linear-gradient(90deg, #6a41fb, #f49959, #6a41fb);
+	background-size: 200%;
+	transition: all 0.4s ease-in-out;
+	background-position: left;
+	&:hover {
+		background-position: right;
+		transition: all 0.4s ease-in-out;
+	}
+}
+
+.bg-grad-4 {
+	background: linear-gradient(270deg, #4d89f9 1.21%, #704ee7 21.78%, #e8428c 71.65%, #ed6d4b 100%);
+}
+a.bg-grad-4 {
+	background: linear-gradient(270deg, #4D89F9 20%, #704EE7 40%, #E8428C 80%, #ED6D4B 100%);
+	background-size: 150%;
+	transition: all 0.4s ease-in-out;
+	background-position: left;
+	&:hover {
+		background-position: right;
+		transition: all 0.4s ease-in-out;
+	}
+}
+button.bg-grad-4 {
+	background: linear-gradient(270deg, #4D89F9 20%, #704EE7 40%, #E8428C 80%, #ED6D4B 100%);
+	background-size: 150%;
+	transition: all 0.4s ease-in-out;
+	background-position: left;
+	&:hover {
+		background-position: right;
+		transition: all 0.4s ease-in-out;
+	}
+}
+.bg-grad-6 {
+	background: linear-gradient(84deg, #8a62fb 4.85%, #00b8d9 95.15%);
+}
+a.bg-grad-6 {
+	background: linear-gradient(84deg, #8a62fb, #00b8d9, #8a62fb);
+	background-size: 200%;
+	transition: all 0.4s ease-in-out;
+	background-position: left;
+	&:hover {
+		background-position: right;
+		transition: all 0.4s ease-in-out;
+	}
+}
+button.bg-grad-6 {
+	background: linear-gradient(84deg, #8a62fb, #00b8d9, #8a62fb);
+	background-size: 200%;
+	transition: all 0.4s ease-in-out;
+	background-position: left;
+	&:hover {
+		background-position: right;
+		transition: all 0.4s ease-in-out;
+	}
+}
+
+.\:bg-grad-4:hover {
+	background: linear-gradient(270deg, #4d89f9 1.21%, #704ee7 21.78%, #e8428c 71.65%, #ed6d4b 100%);
+}
+
+.bg-white-grad-4 {
+	background: linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, #fff 48.96%, rgba(255, 255, 255, 0) 100%);
+}
+
+.bgc-light {
+	background-color: #f3f3f8;
+}
+
+.bg-white {
+	--bg-opacity: 1;
+	background-color: hsl(var(--white) / var(--bg-opacity));
+}
+.bg-black {
+	--bg-opacity: 1;
+	background-color: hsl(var(--black) / var(--bg-opacity));
+}
+.primary {
+	--bg-opacity: 1;
+	background-color: hsl(var(--primary) / var(--bg-opacity));
+}
+.primary-container {
+	--bg-opacity: 1;
+	background-color: hsl(var(--primary-container) / var(--bg-opacity));
+}
+.primary-fixed {
+	--bg-opacity: 1;
+	background-color: hsl(var(--primary-fixed) / var(--bg-opacity));
+}
+.primary-fixed-dim {
+	--bg-opacity: 1;
+	background-color: hsl(var(--primary-fixed-dim) / var(--bg-opacity));
+}
+.inverse-primary {
+	--bg-opacity: 1;
+	background-color: hsl(var(--inverse-primary) / var(--bg-opacity));
+}
+
+.secondary {
+	--bg-opacity: 1;
+	background-color: hsl(var(--secondary) / var(--bg-opacity));
+}
+.secondary-container {
+	--bg-opacity: 1;
+	background-color: hsl(var(--secondary-container) / var(--bg-opacity));
+}
+.secondary-fixed {
+	--bg-opacity: 1;
+	background-color: hsl(var(--secondary-fixed) / var(--bg-opacity));
+}
+.secondary-fixed-dim {
+	--bg-opacity: 1;
+	background-color: hsl(var(--secondary-fixed-dim) / var(--bg-opacity));
+}
+
+.background {
+	--bg-opacity: 1;
+	background-color: hsl(var(--background) / var(--bg-opacity));
+}
+.surface {
+	--bg-opacity: 1;
+	background-color: hsl(var(--surface) / var(--bg-opacity));
+}
+.surface-variant {
+	--bg-opacity: 1;
+	background-color: hsl(var(--surface-variant) / var(--bg-opacity));
+}
+.inverse-surface {
+	--bg-opacity: 1;
+	background-color: hsl(var(--inverse-surface) / var(--bg-opacity));
+}
+.surface-container-highest {
+	--bg-opacity: 1;
+	background-color: hsl(var(--surface-container-highest) / var(--bg-opacity));
+}
+.surface-container-high {
+	--bg-opacity: 1;
+	background-color: hsl(var(--surface-container-high) / var(--bg-opacity));
+}
+.surface-container {
+	--bg-opacity: 1;
+	background-color: hsl(var(--surface-container) / var(--bg-opacity));
+}
+.surface-container-low {
+	--bg-opacity: 1;
+	background-color: hsl(var(--surface-container-low) / var(--bg-opacity));
+}
+.surface-container-lowest {
+	--bg-opacity: 1;
+	background-color: hsl(var(--surface-container-lowest) / var(--bg-opacity));
+}
+.surface-bright {
+	--bg-opacity: 1;
+	background-color: hsl(var(--surface-bright) / var(--bg-opacity));
+}
+.surface-dim {
+	--bg-opacity: 1;
+	background-color: hsl(var(--surface-dim) / var(--bg-opacity));
+}
+
+.\:bg-white:hover {
+	--bg-opacity: 1;
+	background-color: hsl(var(--white) / var(--bg-opacity));
+}
+.\:bg-black:hover {
+	--bg-opacity: 1;
+	background-color: hsl(var(--black) / var(--bg-opacity));
+}
+.\:primary:hover {
+	--bg-opacity: 1;
+	background-color: hsl(var(--primary) / var(--bg-opacity));
+}
+.\:primary-container:hover {
+	--bg-opacity: 1;
+	background-color: hsl(var(--primary-container) / var(--bg-opacity));
+}
+.\:primary-fixed:hover {
+	--bg-opacity: 1;
+	background-color: hsl(var(--primary-fixed) / var(--bg-opacity));
+}
+.\:primary-fixed-dim:hover {
+	--bg-opacity: 1;
+	background-color: hsl(var(--primary-fixed-dim) / var(--bg-opacity));
+}
+.\:inverse-primary:hover {
+	--bg-opacity: 1;
+	background-color: hsl(var(--inverse-primary) / var(--bg-opacity));
+}
+
+.\:secondary:hover {
+	--bg-opacity: 1;
+	background-color: hsl(var(--secondary) / var(--bg-opacity));
+}
+.\:secondary-container:hover {
+	--bg-opacity: 1;
+	background-color: hsl(var(--secondary-container) / var(--bg-opacity));
+}
+.\:secondary-fixed:hover {
+	--bg-opacity: 1;
+	background-color: hsl(var(--secondary-fixed) / var(--bg-opacity));
+}
+.\:secondary-fixed-dim:hover {
+	--bg-opacity: 1;
+	background-color: hsl(var(--secondary-fixed-dim) / var(--bg-opacity));
+}
+
+.\:background:hover {
+	--bg-opacity: 1;
+	background-color: hsl(var(--background) / var(--bg-opacity));
+}
+.\:surface:hover {
+	--bg-opacity: 1;
+	background-color: hsl(var(--surface) / var(--bg-opacity));
+}
+.\:inverse-surface:hover {
+	--bg-opacity: 1;
+	background-color: hsl(var(--inverse-surface) / var(--bg-opacity));
+}
+.\:surface-container-highest:hover {
+	--bg-opacity: 1;
+	background-color: hsl(var(--surface-container-highest) / var(--bg-opacity));
+}
+.\:surface-container-high:hover {
+	--bg-opacity: 1;
+	background-color: hsl(var(--surface-container-high) / var(--bg-opacity));
+}
+.\:surface-container:hover {
+	--bg-opacity: 1;
+	background-color: hsl(var(--surface-container) / var(--bg-opacity));
+}
+.\:surface-container-low:hover {
+	--bg-opacity: 1;
+	background-color: hsl(var(--surface-container-low) / var(--bg-opacity));
+}
+.\:surface-container-lowest:hover {
+	--bg-opacity: 1;
+	background-color: hsl(var(--surface-container-lowest) / var(--bg-opacity));
+}
+.\:surface-bright:hover {
+	--bg-opacity: 1;
+	background-color: hsl(var(--surface-bright) / var(--bg-opacity));
+}
+.\:surface-dim:hover {
+	--bg-opacity: 1;
+	background-color: hsl(var(--surface-dim) / var(--bg-opacity));
+}
+
+.bg-overlay {
+	--overlay-clr: hsl(var(--primary-10));
+	background: linear-gradient(transparent, var(--overlay-clr));
+}
+.bg-opacity-05 {
+	--bg-opacity: 0.05;
+}
+.bg-opacity-1 {
+	--bg-opacity: 0.1;
+}
+
+.bg-opacity-2 {
+	--bg-opacity: 0.2;
+}
+
+.bg-opacity-3 {
+	--bg-opacity: 0.3;
+}
+
+.bg-opacity-4 {
+	--bg-opacity: 0.4;
+}
+
+.bg-opacity-5 {
+	--bg-opacity: 0.5;
+}
+
+.bg-opacity-6 {
+	--bg-opacity: 0.6;
+}
+
+.bg-opacity-7 {
+	--bg-opacity: 0.7;
+}
+
+.bg-opacity-8 {
+	--bg-opacity: 0.8;
+}
+
+.bg-opacity-9 {
+	--bg-opacity: 0.9;
+}
+.bg-opacity-100 {
+	--bg-opacity: 1;
+}
+.\:bg-opacity-1:hover {
+	--bg-opacity: 0.1;
+}
+
+.\:bg-opacity-2:hover {
+	--bg-opacity: 0.2;
+}
+
+.\:bg-opacity-3:hover {
+	--bg-opacity: 0.3;
+}
+
+.\:bg-opacity-4:hover {
+	--bg-opacity: 0.4;
+}
+
+.\:bg-opacity-5:hover {
+	--bg-opacity: 0.5;
+}
+
+.\:bg-opacity-6:hover {
+	--bg-opacity: 0.6;
+}
+
+.\:bg-opacity-7:hover {
+	--bg-opacity: 0.7;
+}
+
+.\:bg-opacity-8:hover {
+	--bg-opacity: 0.8;
+}
+
+.\:bg-opacity-9:hover {
+	--bg-opacity: 0.9;
+}
+.\:bg-opacity-100:hover {
+	--bg-opacity: 1;
+}

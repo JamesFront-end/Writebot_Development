@@ -1,0 +1,53 @@
+@use "../global" as *;
+.form--switch {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	.form-check-input {
+		--bs-form-switch-bg: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iOCIgZmlsbD0id2hpdGUiLz4KPC9zdmc+Cg==);
+		--bs-form-check-bg: hsl(var(--neutral-variant-80));
+		--switch-height: 18px;
+		--switch-width: 32px;
+		--switch-dot-size: 12px;
+		--bs-border-width: 2px;
+		--bs-border-color: hsl(var(--neutral-variant-80));
+		width: var(--switch-width);
+		height: var(--switch-height);
+		margin: 0;
+		padding-inline: 2px;
+		float: none;
+		flex-shrink: 0;
+		background-size: var(--switch-dot-size) var(--switch-dot-size);
+		background-position: 2px center;
+		&:focus {
+			--bs-form-switch-bg: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iOCIgZmlsbD0id2hpdGUiLz4KPC9zdmc+Cg==);
+			border-color: var(--bs-border-color);
+			box-shadow: none;
+		}
+		&:checked {
+			--bs-form-check-bg: hsl(var(--neutral-variant-40));
+			--bs-form-switch-bg: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjE2IiBoZWlnaHQ9IjE2IiByeD0iOCIgZmlsbD0id2hpdGUiLz4KPC9zdmc+Cg==);
+			background-color: var(--bs-form-check-bg);
+			border-color: var(--bs-form-check-bg);
+			background-position: calc(100% - 2px) center;
+		}
+	}
+	&-lg {
+		.form-check-input {
+			--switch-width: 40px;
+			--switch-height: 24px;
+			--switch-dot-size: 16px;
+		}
+	}
+	@each $color, $shades in $colors {
+		@each $shade, $value in $shades {
+			&-#{$color}-#{$shade} {
+				.form-check-input {
+					&:checked {
+						--bs-form-check-bg: hsl(var(--#{$color}-#{$shade}));
+					}
+				}
+			}
+		}
+	}
+}

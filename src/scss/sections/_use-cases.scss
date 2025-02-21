@@ -1,0 +1,235 @@
+@use "../global" as *;
+
+.use-case-breadcrumb-bottom {
+    position: relative;
+    height: 360px;
+    overflow: hidden;
+    @include screen(lg) {
+        height: 450px;
+    }
+    @include screen(xxl) {
+        height: 545px;
+    }
+    &::before {
+        position: absolute;
+        content: '';
+        background-image: url(../img/footer-7-shape-bottom.png);
+        inset-block-end: 0;
+        inset-inline-start: 0;
+        width: 100%;
+        height: 165px;
+        background-position-x: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    &-circle {
+        position: absolute;
+        inset-block-end: -20px;
+        inset-inline-start: 50%;
+        width: 300px;
+        height: 300px;
+        background-color: #000;
+        border: 0.786px solid #211F24;
+        border-radius: 50%;
+        transform: translateX(-50%);
+        z-index: -1;
+        @include screen(lg) {
+            width: 400px;
+            height: 400px;
+            inset-block-end: -10px;
+        }
+        @include screen(xl) {
+            width: 450px;
+            height: 450px;
+            inset-block-end: -35px;
+        }
+        @include screen(xxl) {
+            width: 525px;
+            height: 525px;
+            inset-block-end: -60px;
+        }
+        &::before {
+            position: absolute;
+            content: '';
+            inset-block-start: 50%;
+            inset-inline-start: 50%;
+            width: 250px;
+            height: 250px;
+            background-color: #000;
+            border: 0.786px solid #211F24;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            @include screen(lg) {
+                width: 320px;
+                height: 320px;
+            }
+            @include screen(xl) {
+                width: 300px;
+                height: 300px;
+            }
+            @include screen(xxl) {
+                width: 405px;
+                height: 405px;
+            }
+        }
+
+        &::after {
+            position: absolute;
+            content: '';
+            inset-block-start: 50%;
+            inset-inline-start: 50%;
+            width: 250px;
+            height: 250px;
+            background: linear-gradient(180deg, #5C2BFF 0%, rgba(92, 43, 255, 0.00) 100%);
+            filter: blur(200px);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            @include screen(lg) {
+                width: 320px;
+                height: 320px;
+            }
+            @include screen(xl) {
+                width: 300px;
+                height: 300px;
+            }
+            @include screen(xxl) {
+                width: 405px;
+                height: 405px;
+            }
+        }
+
+        .radar-logo-wrapper {
+            position: absolute;
+            inset-block-start: 50%;
+            inset-inline-start: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+}
+
+.pricing-compare-wrapper {
+    position: relative;
+    padding: 0;
+    z-index: 1;
+    overflow-x: auto;
+    @include screen(lg) {
+        padding: rem(45);
+    }
+    &-inner {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        min-width: 850px;
+        @include screen(lg) {
+            min-width: 100%;
+        }
+    }
+    .pricing-compare-title {
+        font-size: rem(18);
+        font-weight: 600;
+        color: #C4C7C7;
+        width: 200px;
+        text-align: center;
+        padding-block-start: 20px;
+        &:first-child {
+            margin-right: 30px;
+        }
+    }
+    .difference-line {
+        position: absolute;
+        z-index: -1;
+        display: none;
+        @include screen(lg) {
+            display: block;
+        }
+        &-top {
+            inset-block-start: 0;
+            inset-inline-start: 50%;
+            transform: translateX(-50%);
+        }
+        &-bottom {
+            inset-block-end: 0;
+            inset-inline-start: 50%;
+            transform: translateX(-50%);
+        }
+        &-left {
+            inset-inline-start: 0;
+            inset-block-start: 0;
+            height: 100%;
+        }
+        &-right {
+            inset-inline-end: 0;
+            inset-block-start: 0;
+            height: 100%;
+        }
+    }
+}
+
+.pricing-compare-list {
+    width: 100%;
+    position: relative;
+    padding-inline-start: 0;
+    margin: 0;
+    &::before {
+        position: absolute;
+        content: '';
+        inset-block-start: -45px;
+        inset-inline-end: 230px;
+        width: 200px;
+        height: calc(100% + 45px);
+        border-radius: 12px;
+        background: linear-gradient(180deg, #0B0F0F 68.54%, rgba(11, 15, 15, 0.00) 86.92%);
+        z-index: -1;
+    }
+    &::after {
+        position: absolute;
+        content: '';
+        inset-block-start: -45px;
+        inset-inline-end: 0;
+        width: 200px;
+        height: calc(100% + 45px);
+        border-radius: 12px;
+        background: linear-gradient(180deg, #0B0F0F 68.54%, rgba(11, 15, 15, 0.00) 86.92%);
+        z-index: -1;
+    }
+    li {
+        display: flex;
+        align-items: center;
+        padding: rem(20) 0;
+        position: relative;
+        &::after {
+            position: absolute;
+            content: '';
+            inset-block-end: 0;
+            inset-inline-start: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(to right, #48454E00, #48454E);
+            opacity: 0.65;
+        }
+        .caption {
+            width: calc(100% - 430px);
+            color: #C4C7C7;
+        }
+        .writebot-check {
+            width: 200px;
+            text-align: center;
+            margin-inline-end: 30px;
+        }
+        .chatgpt-check {
+            width: 200px;
+            text-align: center;
+        }
+    }
+}
+
+.use-case-video-wrapper {
+    position: relative;
+    .use-case-video-btn {
+        position: absolute;
+        inset-block-start: 50%;
+        inset-inline-start: 50%;
+        transform: translate(-50%, -50%);
+    }
+}

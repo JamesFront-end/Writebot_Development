@@ -1,0 +1,108 @@
+@use "../global" as *;
+
+.hero-5 {
+    position: relative;
+	isolation: isolate; 
+	@include screen(xs) {
+        padding-block-start: 7rem;
+    }
+
+    @include screen(lg) {
+        padding-block-start: 11rem;
+    }
+
+    @include screen(xxl) {
+        padding-block-start: 16rem;
+    }
+
+    .hero-5-title {
+        @include screen(xs) {
+            font-size: var(--h3);
+        }
+        @include screen(xxl) {
+            font-size: var(--h2);
+        }
+        img {
+            @include screen(xs) {
+                max-height: 3rem;
+            }
+        }
+    }
+    &__shape {
+        @include screen(xs) {
+            position: absolute;
+            z-index: -1;
+            &-digit {
+                inset-block-start: 0;
+                inset-inline-start: 50%;
+                transform: translateX(-50%);
+            }
+
+            &-top {
+                inset-block-start: 0;
+                inset-inline-start: 50%;
+                transform: translateX(-50%);
+            }
+
+            &-left {
+                inset-block-start: 0;
+                inset-inline-start: 0;
+            }
+
+            &-left-2 {
+                inset-block-start: 0;
+                inset-inline-start: 20%;
+                display: none;
+            }
+
+            &-right {
+                inset-block-start: 0;
+                inset-inline-end: 0;
+            }
+
+            &-circle {
+                inset-block-start: 22%;
+                inset-inline-start: 48%;
+                transform: translateX(-50%);
+            }
+        }
+    }
+
+    &__right {
+        position: absolute;
+        transform: translate(-50%, -50%);
+        @include screen(xs) {
+            max-width: 3rem;
+            &-arrow1 {
+                inset-block-start: 36%;
+                inset-inline-start: 50%;
+            }
+    
+            &-arrow2 {
+                inset-block-start: 46%;
+                inset-inline-start: 49%;
+            }
+        }
+        @include screen(sm) {
+            max-width: 5rem;
+            &-arrow1 {
+                inset-block-start: 32%;
+            }
+    
+            &-arrow2 {
+                inset-block-start: 44%;
+            }
+        }
+        @include screen(lg) {
+            max-width: 4rem;
+            &-arrow1 {
+                inset-block-start: 36%;
+            }
+    
+            &-arrow2 {
+                inset-block-start: 48%;
+                inset-inline-start: 48%;
+            }
+        }
+    }
+}

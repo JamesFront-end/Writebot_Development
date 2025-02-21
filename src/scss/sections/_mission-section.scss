@@ -1,0 +1,40 @@
+@use "../global" as *;
+// mission-line-top
+
+.mission-section {
+    position: relative;
+    z-index: 1;
+    .mission-shape-circle {
+        position: absolute;
+        inset-block-start: -100%;
+        inset-inline-end: 0;
+    }
+}
+
+.mission-wrapper {
+    position: relative;
+    z-index: 1;
+    @include screen(lg) {
+        padding-inline-end: rem(15);
+    }
+    .mission-shape-line {
+        position: absolute;
+        z-index: -1;
+        display: none;
+        @include screen(lg) {
+            display: block;
+        }
+        &-top {
+            inset-block-start: -57px;
+            inset-inline-start: 67%;
+            transform: translateX(-50%);
+            @include screen(xl) {
+                inset-inline-start: 56%;
+            }
+        }
+        &-right {
+            inset-block-start: -53px;
+            inset-inline-end: 0;
+        }
+    }
+}

@@ -1,0 +1,21 @@
+@use "../global" as *;
+.flexible-pricing-card {
+    @include screen(xl) {
+        position: relative;
+        isolation: isolate;
+        &::before {
+            content: url(../img/pricing-divider.png);
+            position: absolute;
+            inset-block-start: 50%;
+            inset-inline-start: -2.5rem;
+            transform: translateY(-50%);
+        }
+        &::after {
+            content: url(../img/pricing-divider.png);
+            position: absolute;
+            inset-block-start: 50%;
+            inset-inline-end: 2.5rem;
+            transform: translateY(-50%);
+        }
+    }
+}

@@ -1,0 +1,261 @@
+$flex-directions: (row, column);
+$colors: (
+	primary: (
+		key: 254 100% 68%,
+		0: 0 0% 0%,
+		2: 219 93% 64%,
+		10: 256 100% 19%,
+		20: 258 100% 31%,
+		30: 259 100% 43%,
+		40: 254 100% 68%,
+		50: 251 100% 70%,
+		60: 249 100% 75%,
+		70: 249 100% 81%,
+		80: 249 100% 87%,
+		90: 253 100% 94%,
+		95: 261 100% 97%,
+		99: 300 100% 99%,
+		100: 0 0% 100%,
+	),
+	secondary: (
+		key: 13 82% 61%,
+		0: 0 0% 0%,
+		10: 27 100% 9%,
+		20: 30 100% 15%,
+		30: 31 100% 22%,
+		40: 25 95% 62%,
+		50: 33 100% 35%,
+		60: 33 100% 43%,
+		70: 32 99% 54%,
+		80: 27 100% 75%,
+		90: 25 100% 88%,
+		95: 21 100% 95%,
+		99: 300 100% 99%,
+		100: 0 0% 100%,
+	),
+	neutral: (
+		key: 0 0% 11%,
+		0: 0 0% 0%,
+		4: 180 15% 5%,
+		6: 192 14% 7%,
+		10: 195 7% 11%,
+		12: 195 6% 12%,
+		17: 180 5% 16%,
+		20: 195 4% 19%,
+		22: 195 4% 20%,
+		24: 180 4% 22%,
+		30: 195 3% 27%,
+		40: 180 2% 37%,
+		50: 180 2% 46%,
+		60: 195 2% 56%,
+		70: 180 2% 67%,
+		80: 180 3% 77%,
+		87: 200 4% 85%,
+		90: 180 3% 89%,
+		92: 200 6% 91%,
+		94: 200 9% 93%,
+		95: 180 7% 94%,
+		96: 180 8% 95%,
+		99: 180 43% 99%,
+		100: 0 0% 100%,
+	),
+	neutral-variant: (
+		0: 0 0% 0%,
+		10: 249 11% 12%,
+		20: 253 9% 20%,
+		30: 260 6% 29%,
+		40: 260 5% 38%,
+		50: 264 4% 48%,
+		60: 264 5% 58%,
+		70: 262 7% 68%,
+		80: 262 10% 79%,
+		90: 265 24% 90%,
+		95: 267 52% 96%,
+		99: 300 100% 99%,
+		100: 0 0% 100%,
+	),
+);
+$bs-colors: (
+	success: (
+		10: 161 73% 19%,
+		20: 161 73% 25%,
+		30: 161 74% 32%,
+		40: 161 74% 41%,
+		50: 161 74% 45%,
+		60: 161 61% 56%,
+		70: 161 61% 63%,
+		80: 161 61% 75%,
+		90: 161 61% 83%,
+		100: 159 63% 95%,
+	),
+	danger: (
+		10: 348 59% 26%,
+		20: 348 59% 35%,
+		30: 348 59% 45%,
+		40: 348 79% 57%,
+		50: 348 100% 63%,
+		60: 348 100% 70%,
+		70: 348 100% 75%,
+		80: 348 100% 83%,
+		90: 348 100% 88%,
+		100: 347 100% 96%,
+	),
+	warning: (
+		10: 43 57% 27%,
+		20: 43 58% 35%,
+		30: 43 58% 45%,
+		40: 43 79% 58%,
+		50: 43 100% 63%,
+		60: 43 100% 71%,
+		70: 43 100% 75%,
+		80: 43 100% 83%,
+		90: 43 100% 89%,
+		100: 44 100% 96%,
+	),
+	info: (
+		10: 190 77% 17%,
+		20: 190 77% 22%,
+		30: 190 77% 28%,
+		40: 190 76% 36%,
+		50: 190 76% 40%,
+		60: 190 51% 52%,
+		70: 190 51% 60%,
+		80: 190 51% 73%,
+		90: 190 52% 81%,
+		100: 191 53% 94%,
+	),
+);
+$brand-colors: (
+	fb: 214 89% 52%,
+	tw: 203 89% 53%,
+	yt: 0 100% 50%,
+	ins: 340 75% 54%,
+	in: 201 100% 35%,
+	pin: 351 100% 45%,
+	wapp: 142 70% 49%,
+	dbl: 337 79% 61%,
+	be: 219 100% 55%,
+	vim: 195 83% 51%,
+	wc: 138 91% 38%,
+	rdt: 16 100% 50%,
+	skp: 196 100% 47%,
+	snap: 59 100% 50%,
+	twitch: 264 100% 64%,
+	qra: 13 100% 33%,
+);
+
+:root {
+	// Font Size (19px = 1vw @screen 1920px)
+	--d1: clamp(3.5rem, 4.210vw + 1rem, 5rem); //80px
+	--d2: clamp(3.15rem, 3.789vw + 1rem, 4.5rem); //72px
+	--d3: clamp(2.8rem, 3.368vw + 1rem, 4rem); //64px
+	--d4: clamp(2.45rem, 2.947vw + 1rem, 3.5rem); //56px
+
+	--h1: clamp(3.15rem, 3.789vw + 1rem, 4.5rem); //72px
+	--h2: clamp(2.8rem, 3.368vw + 1rem, 4rem); //64px
+	--h3: clamp(2.1rem, 2.526vw + 1rem, 3rem); //48px
+	--h4: clamp(1.575rem, 1.894vw + 1rem, 2.25rem); //36px
+	--h5: clamp(1.225rem, 1.473vw + 1rem, 1.75rem); //28px
+	--h6: clamp(1rem, 1.052vw + 1rem, 1.25rem); //20px
+
+	//Brand Colors
+	@each $brand, $values in $brand-colors {
+		--#{$brand}: #{$values};
+	}
+
+	// Reference Colors
+	@each $color, $shades in $colors {
+		@each $shade, $value in $shades {
+			--#{$color}-#{$shade}: #{$value};
+		}
+	}
+	@each $color, $shades in $bs-colors {
+		@each $shade, $value in $shades {
+			--#{$color}-#{$shade}: #{$value};
+		}
+	}
+
+	--black: 0 0% 0%;
+	--white: 0 0% 100%;
+
+	// System Colors
+	--primary: var(--primary-key);
+	--on-primary: var(--primary-100);
+	--primary-container: var(--primary-90);
+	--on-primary-container: var(--primary-20);
+	--primary-fixed: var(--primary-90);
+	--on-primary-fixed: var(--primary-10);
+	--primary-fixed-dim: var(--primary-80);
+	--on-primary-fixed-variant: var(--primary-30);
+	--inverse-primary: var(--primary-80);
+
+	--secondary: var(--secondary-70);
+	--on-secondary: var(--secondary-100);
+	--secondary-container: var(--secondary-90);
+	--on-secondary-container: var(--secondary-20);
+	--secondary-fixed: var(--secondary-90);
+	--on-secondary-fixed: var(--secondary-10);
+	--secondary-fixed-dim: var(--secondary-80);
+	--on-secondary-fixed-variant: var(--secondary-30);
+
+	--background: var(--neutral-100);
+	--on-background: var(--neutral-10);
+	--surface: var(--neutral-99);
+	--on-surface: var(--neutral-10);
+	--surface-variant: var(--neutral-variant-90);
+	--on-surface-variant: var(--neutral-variant-30);
+	--inverse-surface: var(--neutral-key);
+	--inverse-on-surface: var(--neutral-95);
+	--surface-container-highest: var(--neutral-90);
+	--surface-container-high: var(--neutral-92);
+	--surface-container: var(--neutral-94);
+	--surface-container-low: var(--neutral-96);
+	--surface-container-lowest: var(--neutral-100);
+	--surface-bright: 180 17% 98%;
+	--surface-dim: var(--neutral-87);
+
+	--outline: var(--neutral-variant-50);
+	--outline-variant: var(--neutral-variant-80);
+	--shadow: 210 13% 62%;
+}
+[data-bs-theme="dark"] {
+	// System Colors
+	--primary: var(--primary-80);
+	--on-primary: var(--primary-20);
+	--primary-container: var(--primary-30);
+	--on-primary-container: var(--primary-90);
+	--primary-fixed: var(--primary-90);
+	--on-primary-fixed: var(--primary-10);
+	--primary-fixed-dim: var(--primary-80);
+	--on-primary-fixed-variant: var(--primary-30);
+	--inverse-primary: var(--primary-key);
+
+	--secondary: var(--secondary-80);
+	--on-secondary: var(--secondary-20);
+	--secondary-container: var(--secondary-30);
+	--on-secondary-container: var(--secondary-90);
+	--secondary-fixed: var(--secondary-90);
+	--on-secondary-fixed: var(--secondary-10);
+	--secondary-fixed-dim: var(--secondary-80);
+	--on-secondary-fixed-variant: var(--secondary-30);
+
+	--background: var(--neutral-10);
+	--on-background: var(--neutral-90);
+	--surface: var(--neutral-6);
+	--on-surface: var(--neutral-80);
+	--surface-variant: var(--neutral-variant-30);
+	--on-surface-variant: var(--neutral-variant-80);
+	--inverse-surface: var(--neutral-90);
+	--inverse-on-surface: var(--neutral-10);
+	--surface-container-highest: var(--neutral-22);
+	--surface-container-high: var(--neutral-17);
+	--surface-container: var(--neutral-12);
+	--surface-container-low: var(--neutral-10);
+	--surface-container-lowest: var(--neutral-4);
+	--surface-bright: var(--neutral-24);
+	--surface-dim: var(--neutral-6);
+
+	--outline: var(--neutral-variant-60);
+	--outline-variant: var(--neutral-variant-30);
+	--shadow: var(--black);
+}

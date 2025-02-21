@@ -1,0 +1,24 @@
+.scroller-x {
+	overflow: hidden;
+	&[data-direction="right"] {
+		--_animation-direction: reverse;
+	}
+	&[data-direction="left"] {
+		--_animation-direction: forwards;
+	}
+	&[data-speed="fast"] {
+		--_animation-duration: 30s;
+	}
+	&[data-speed="slow"] {
+		--_animation-duration: 120s;
+	}
+	&__list {
+		width: max-content;
+		flex-wrap: nowrap;
+		animation: scroll var(--_animation-duration, 60s) var(--_animation-direction, forwards) linear infinite;
+		&:hover {
+			animation-play-state: paused;
+		}
+	}
+}
+

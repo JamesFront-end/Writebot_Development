@@ -1,0 +1,13 @@
+@use "../global" as *;
+.container {
+    &-max {
+        @include screen(max) {
+            max-width: 1600px;
+        }
+    }
+    &-xmax {
+        @include screen(xmax) {
+            max-width: 1920px;
+        }
+    }
+}

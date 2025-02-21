@@ -1,0 +1,23 @@
+.animated-border-btn {
+	--border-width: 1px;
+	padding: var(--border-width);
+	&::after {
+		content: "";
+		position: absolute;
+		left: -50%;
+		top: -50%;
+		width: 200%;
+		height: 200%;
+		background-color: transparent;
+		background-repeat: no-repeat;
+		background-size: 50% 50%, 50% 50%;
+		background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+		background-image: radial-gradient(circle, rgba(63, 237, 251, 1) 0%, rgba(252, 70, 107, 0) 71%),
+			linear-gradient(transparent, transparent), linear-gradient(transparent, transparent),
+			linear-gradient(transparent, transparent);
+		animation: borderRotate 4s linear infinite;
+		z-index: -1;
+		pointer-events: none;
+	}
+}
+

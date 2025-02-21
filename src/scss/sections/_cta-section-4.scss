@@ -1,0 +1,22 @@
+@use "../global" as *;
+
+.cta-wrapper-4 {
+    position: relative;
+    isolation: isolate;
+    padding-block: rem(50);
+    padding-inline: rem(30);
+    @include screen(md) {
+        padding-block: rem(70);
+        padding-inline: rem(60);
+    }
+    @include screen(xl) {
+        padding-block: rem(120);
+        padding-inline: rem(60);
+    }
+    .cta-wrapper-4-bg {
+        position: absolute;
+        inset-block-start: 0;
+        inset-inline-start: 0;
+        z-index: -1;
+    }
+} 

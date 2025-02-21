@@ -1,0 +1,22 @@
+@use "../global" as *;
+.feature-section-1 {
+	background-image: url(../img/feature-section-1-bg.png);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	&__logo {
+		position: relative;
+		isolation: isolate;
+		border: 3rem solid hsl(var(--neutral-12) / 0.5);
+		&-path {
+			display: none;
+			@include screen(xxl) {
+				display: block;
+				position: absolute;
+				top: calc(100% + 3rem);
+				inset-inline-end: 50%;
+				z-index: -1;
+			}
+		}
+	}
+}

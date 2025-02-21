@@ -1,0 +1,57 @@
+@use "../global" as *;
+.ai-featured-section {
+	&__top {
+		@include screen(xl) {
+			position: relative;
+			isolation: isolate;
+			&::after {
+				content: url(../img/dual-star-shapes.png);
+				position: absolute;
+				inset-block-start: 50%;
+				inset-inline-end: 0;
+				transform: translateY(-50%);
+				z-index: -1;
+				pointer-events: none;
+			}
+		}
+		&-shape-1 {
+			display: none;
+			@include screen(max) {
+				display: inline-block;
+				position: absolute;
+				inset-block-start: 50%;
+				inset-inline-end: 75%;
+				z-index: -1;
+			}
+		}
+		&-shape-2 {
+			display: none;
+			@include screen(max) {
+				display: inline-block;
+				position: absolute;
+				inset-block-end: 50%;
+				inset-inline-start: 50%;
+				z-index: -1;
+			}
+		}
+	}
+	&__title {
+		@include screen(max) {
+			position: relative;
+			isolation: isolate;
+			&::after {
+				content: url(../img/ai-featured-section-shape.png);
+				position: absolute;
+				inset-block-start: 50%;
+				inset-inline-end: 5%;
+				transform: translateY(-25%);
+				z-index: -1;
+			}
+		}
+		@include screen(xmax) {
+			&::after {
+				inset-inline-end: 15%;
+			}
+		}
+	}
+}

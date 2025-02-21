@@ -1,0 +1,8 @@
+.pricing-btn {
+	&-1 {
+		background-color: transparent;
+		&.active {
+			background-color: hsl(var(--primary-90));
+		}
+	}
+}

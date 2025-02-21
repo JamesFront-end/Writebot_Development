@@ -1,0 +1,19 @@
+@use "../global" as *;
+.pricing-section-1 {
+	position: relative;
+	&__img {
+		display: none;
+		@include screen(xxl) {
+			display: block;
+			position: absolute;
+			z-index: -1;
+			pointer-events: none;
+		}
+		&--1 {
+			@include screen(xxl) {
+				inset-block-start: 0;
+				inset-inline-start: 0;
+			}
+		}
+	}
+}

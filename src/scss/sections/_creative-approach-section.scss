@@ -1,0 +1,35 @@
+@use "../global" as *;
+.creative-approach-section {
+	@include screen(xl) {
+		border-top: 1px solid hsl(var(--neutral-10));
+		&::before {
+			content: "";
+			position: absolute;
+			inset-inline-start: 50%;
+			inset-block-start: 0;
+			width: 100px;
+			height: 2px;
+			background: radial-gradient(circle, #4400d9 0%, transparent 70%);
+			animation: leftToRight 30s linear infinite alternate;
+			z-index: 1;
+			pointer-events: none;
+		}
+		&::after {
+			content: "";
+			position: absolute;
+			inset-inline-start: 50%;
+			inset-block-start: 0;
+			width: 1px;
+			height: 100px;
+			background: radial-gradient(circle, #00b8d9 0%, transparent 70%);
+			animation: topToBottom 20s linear infinite alternate;
+			z-index: 1;
+			pointer-events: none;
+		}
+	}
+	&__item + .creative-approach-section__item {
+		@include screen(xl) {
+			border-left: 1px solid hsl(var(--neutral-10));
+		}
+	}
+}

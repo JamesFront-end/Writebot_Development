@@ -1,0 +1,87 @@
+@use "../global" as *;
+.integration-shape {
+	&-1 {
+		@include screen(xl) {
+			inset-inline-start: 0;
+			inset-block-end: -130px;
+			max-width: 50%;
+		}
+		@include screen(xxl) {
+			inset-block-end: -150px;
+		}
+	}
+	&-2 {
+		@include screen(xl) {
+			inset-inline-end: 0;
+			inset-block-end: -130px;
+			max-width: 50%;
+		}
+		@include screen(xxl) {
+			inset-block-end: -150px;
+		}
+	}
+	&-3 {
+		@include screen(xl) {
+			inset-block-start: 50%;
+			inset-inline-start: 35%;
+			transform: translateY(-50%);
+		}
+	}
+	&-4 {
+		@include screen(xl) {
+			inset-block-start: 20%;
+			inset-inline-start: 25%;
+			transform: translateY(-50%);
+		}
+	}
+	&-5 {
+		@include screen(xl) {
+			inset-block-end: 5%;
+			inset-inline-start: 20%;
+		}
+	}
+	&-6 {
+		@include screen(xl) {
+			inset-block-start: 0;
+			inset-inline-start: 10%;
+		}
+	}
+	&-7 {
+		@include screen(xl) {
+			inset-block-end: 0;
+			inset-inline-start: 0;
+		}
+	}
+	&-8 {
+		@include screen(xl) {
+			inset-block-start: 50%;
+			inset-inline-end: 35%;
+			transform: translateY(-50%);
+		}
+	}
+	&-9 {
+		@include screen(xl) {
+			inset-block-start: 20%;
+			inset-inline-end: 25%;
+			transform: translateY(-50%);
+		}
+	}
+	&-10 {
+		@include screen(xl) {
+			inset-block-end: 5%;
+			inset-inline-end: 20%;
+		}
+	}
+	&-11 {
+		@include screen(xl) {
+			inset-block-start: 0;
+			inset-inline-end: 10%;
+		}
+	}
+	&-12 {
+		@include screen(xl) {
+			inset-block-end: 0;
+			inset-inline-end: 0;
+		}
+	}
+}

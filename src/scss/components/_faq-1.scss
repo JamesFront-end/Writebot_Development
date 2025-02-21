@@ -1,0 +1,25 @@
+@use "../global" as *;
+.faq-1 {
+	&__para {
+		display: -webkit-box;
+		-webkit-line-clamp: 3;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+	}
+	.swiper-slide {
+		height: auto;
+		background-color: hsl(var(--neutral-6) / 0.5);
+		border-radius: 0.25rem;
+	}
+	.swiper-slide-active {
+		background-color: hsl(var(--neutral-6));
+		@include screen(xl) {
+			width: 60% !important;
+		}
+	}
+	.swiper-slide-next {
+		@include screen(xl) {
+			width: calc(40% - 1.5rem) !important;
+		}
+	}
+}

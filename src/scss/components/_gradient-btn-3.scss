@@ -1,0 +1,61 @@
+.gradient-btn-3 {
+	color: hsl(var(--white));
+	&:hover {
+		&::before {
+			background-position: right;
+		}
+	}
+	&::before {
+		content: "";
+		position: absolute;
+		inset: 0;
+		z-index: -1;
+		border-radius: inherit;
+		background-image: linear-gradient(90deg, #8b62fb9d 10%, transparent 90%);
+		background-size: 125%;
+		background-position: left;
+		transition: all 0.5s ease;
+	}
+	&::after {
+		content: "";
+		position: absolute;
+		inset: 0;
+		border: 1px solid transparent;
+		border-radius: inherit;
+		background: linear-gradient(90deg, #8a62fb, #00b8d9) border-box;
+		-webkit-mask: linear-gradient(hsl(var(--black)) 0 0) padding-box, linear-gradient(hsl(var(--black)) 0 0);
+		-webkit-mask-composite: xor;
+		mask-composite: exclude;
+		z-index: -1;
+	}
+}
+.\:gradient-btn-3 {
+	border: 1px solid #525353;
+	color: #aca5a5;
+	&:hover {
+		color: hsl(var(--white));
+		&::before {
+			content: "";
+			position: absolute;
+			inset: 0;
+			z-index: -1;
+			border-radius: inherit;
+			background-image: linear-gradient(90deg, #8b62fb9d 10%, transparent 90%);
+			background-size: 125%;
+			background-position: left;
+			transition: all 0.5s ease;
+		}
+		&::after {
+			content: "";
+			position: absolute;
+			inset: 0;
+			border: 1px solid transparent;
+			border-radius: inherit;
+			background: linear-gradient(90deg, #8a62fb, #00b8d9) border-box;
+			-webkit-mask: linear-gradient(hsl(var(--black)) 0 0) padding-box, linear-gradient(hsl(var(--black)) 0 0);
+			-webkit-mask-composite: xor;
+			mask-composite: exclude;
+			z-index: -1;
+		}
+	}
+}

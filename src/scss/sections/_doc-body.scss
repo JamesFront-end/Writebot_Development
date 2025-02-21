@@ -1,0 +1,43 @@
+@use "../global" as *;
+.doc-body {
+	@include screen(lg) {
+		display: flex;
+		align-items: flex-start;
+	}
+	&__content {
+		min-height: calc(100vh - 120px);
+		@include screen(lg) {
+			min-height: calc(100vh - 73px);
+		}
+	}
+	&__inner {
+		min-height: calc(100vh - 120px);
+		@include screen(lg) {
+			min-height: calc(100vh - 130px);
+		}
+	}
+	&__sitemap {
+		@include screen(lg) {
+			width: rem(220);
+			height: calc(100vh - 73px);
+			position: sticky;
+			top: 73px;
+			overflow-y: auto;
+			scrollbar-color: hsl(var(--inverse-surface) / 0.25) hsl(var(--inverse-surface) / 0.05);
+			scrollbar-width: thin;
+			&::-webkit-scrollbar {
+				width: 0.25rem;
+			}
+			&::-webkit-scrollbar-track {
+				background: hsl(var(--inverse-surface) / 0.05);
+			}
+
+			&::-webkit-scrollbar-thumb {
+				background: hsl(var(--inverse-surface) / 0.25);
+			}
+		}
+		@include screen(xl) {
+			width: rem(300);
+		}
+	}
+}

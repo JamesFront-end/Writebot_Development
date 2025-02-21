@@ -1,0 +1,79 @@
+@use "../bootstrap" as bs;
+@use "../global" as *;
+
+.list {
+	--direction: column;
+	display: flex;
+	flex-direction: var(--direction);
+	margin: 0;
+	padding: 0;
+	list-style: none;
+
+	@each $direction in $flex-directions {
+		&-#{$direction} {
+			--direction: #{$direction};
+		}
+
+		@each $screen, $value in bs.$grid-breakpoints {
+			&-#{$screen}-#{$direction} {
+				@include screen(#{$screen}) {
+					--direction: #{$direction};
+				}
+			}
+		}
+	}
+
+	&-disc {
+		list-style: disc;
+		padding-inline-start: 1rem;
+	}
+
+	&-dot {
+		--dot-clr: hsl(var(--white));
+		--dot-size: 0.25rem;
+		& > li + li {
+			padding-inline-start: var(--dot-size);
+			margin-inline-start: var(--dot-size);
+			position: relative;
+			isolation: isolate;
+			&::before {
+				content: "";
+				width: calc(var(--dot-size) / 2);
+				height: calc(var(--dot-size) / 2);
+				border-radius: 50%;
+				position: absolute;
+				inset-block-start: 50%;
+				inset-inline-start: 0;
+				transform: translate(-50%, -50%);
+				background-color: var(--dot-clr);
+			}
+		}
+		&-sm {
+			--dot-size: 0.5rem;
+		}
+		&-md {
+			--dot-size: 0.75rem;
+		}
+		&-lg {
+			--dot-size: 1rem;
+		}
+		&-xl {
+			--dot-size: 1.25rem;
+		}
+		&-xxl {
+			--dot-size: 1.5rem;
+		}
+		@each $color, $shades in $colors {
+			@each $shade, $value in $shades {
+				&-#{$color}-#{$shade} {
+					--dot-clr: hsl(var(--#{$color}-#{$shade}));
+				}
+			}
+		}
+	}
+	&-flush {
+		li + li {
+			border-top: 1px solid hsl(var(--outline) / 0.5);
+		}
+	}
+}

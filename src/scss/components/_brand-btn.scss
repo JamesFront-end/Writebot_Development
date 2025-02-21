@@ -1,0 +1,13 @@
+.brand-btn {
+	filter: grayscale(1);
+	transition: all 0.3s ease;
+	&:hover {
+		filter: grayscale(0);
+        cursor: pointer;
+	}
+	img {
+		max-width: 100px;
+        height: 36px;
+        object-fit: contain;
+	}
+}

@@ -1,0 +1,21 @@
+@use "../global" as *;
+.testimonial-section-1 {
+	&__content {
+		@include screen(md) {
+			position: relative;
+			isolation: isolate;
+			&::after {
+				content: "";
+				position: absolute;
+				inset: 0;
+				background: linear-gradient(
+					90deg,
+					rgba(0, 0, 0, 1) 0%,
+					rgba(0, 184, 217, 0) 50%,
+					rgba(0, 0, 0, 1) 100%
+				);
+				pointer-events: none;
+			}
+		}
+	}
+}

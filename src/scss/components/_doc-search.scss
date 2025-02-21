@@ -1,0 +1,105 @@
+.doc-search {
+	&--modal {
+		.modal-content {
+			border: 0;
+		}
+		.modal-footer {
+			justify-content: flex-start;
+			gap: 1rem;
+		}
+	}
+	&__btn {
+		display: flex;
+		gap: 1.5rem;
+		align-items: center;
+		padding: 0.5rem 1rem;
+		background-color: hsl(var(--surface-container-low) / 0.5);
+		border: 1px solid hsl(var(--outline) / 0.1);
+		border-radius: 0.25rem;
+		color: hsl(var(--on-surface));
+		font-size: 14px;
+		transition: all 0.3s ease;
+		&:hover {
+			border-color: hsl(var(--primary) / 0.25);
+		}
+	}
+	&__content {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+	}
+	&__shortcut {
+		display: inline-block;
+		padding: 0.25rem 0.5rem;
+		font-size: 0.75rem;
+		line-height: 1.2;
+		background-color: hsl(var(--surface-container-lowest) / 0.5);
+		border: 1px solid hsl(var(--outline) / 0.1);
+		border-radius: 0.25rem;
+	}
+	&__is {
+		display: flex;
+		width: 100%;
+		background-color: hsl(var(--background));
+		border-radius: 0.5rem;
+	}
+	&__icon {
+		display: grid;
+		place-content: center;
+		padding: 1rem 0 1rem 1rem;
+		flex-shrink: 0;
+		color: hsl(var(--primary));
+	}
+	&__input {
+		padding: 0.75rem 1rem;
+		background-color: transparent;
+		border: 0;
+		font-size: 1.25rem;
+		font-weight: 500;
+		color: hsl(var(--on-surface));
+		font-family: var(--ff-2);
+		&::placeholder {
+			color: hsl(var(--on-surface) / 0.35);
+		}
+		&:focus {
+			background-color: transparent;
+			box-shadow: unset;
+		}
+	}
+	&__cancel {
+		display: grid;
+		place-content: center;
+		padding: 1rem;
+		background-color: transparent;
+		border: 0;
+		flex-shrink: 0;
+		color: hsl(var(--on-surface) / 0.5);
+	}
+	&__description {
+		display: -webkit-box;
+		-webkit-line-clamp: 1;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+		max-width: 60ch;
+	}
+	&__list {
+		max-height: 400px;
+		overflow-y: auto;
+		scrollbar-color: hsl(var(--inverse-surface) / 0.25) hsl(var(--inverse-surface) / 0.05);
+		scrollbar-width: thin;
+		&::-webkit-scrollbar {
+			width: 0.25rem;
+		}
+
+		&::-webkit-scrollbar-track {
+			background: hsl(var(--inverse-surface) / 0.05);
+		}
+
+		&::-webkit-scrollbar-thumb {
+			background: hsl(var(--inverse-surface) / 0.25);
+		}
+		li + li {
+			border-top: 1px solid hsl(var(--outline) / 0.1);
+		}
+	}
+}

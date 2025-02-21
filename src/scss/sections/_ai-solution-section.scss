@@ -1,0 +1,26 @@
+@use "../global" as *;
+.ai-solution-section {
+	&::after {
+		@include screen(xl) {
+			content: url(../img/ai-solution-shape.png);
+			position: absolute;
+			inset-block-start: 0;
+			inset-inline-start: 0;
+			transform: translateY(-20%);
+			max-width: 100%;
+			z-index: -1;
+			pointer-events: none;
+		}
+	}
+
+	&_shape {
+		@include screen(md) {
+			position: absolute;
+			inset-inline-start: 50%;
+			inset-block-start: 0;
+			transform: translate(-50%, -25%);
+			z-index: -1;
+			pointer-events: none;
+		}
+	}
+}

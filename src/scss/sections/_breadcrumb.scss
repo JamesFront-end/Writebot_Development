@@ -1,0 +1,88 @@
+@use "../global" as *;
+
+.breadcrumb-section {
+    position: relative;
+    z-index: 1;
+    padding-block-start: rem(120);
+    @include screen(lg) {
+        padding-block-start: rem(150);
+    }
+    @include screen(xl) {
+        padding-block-start: rem(180);
+    }
+    @include screen(xxl) {
+        padding-block-start: rem(230);
+    }
+    .breadcrumb-shape {
+        position: absolute;
+        z-index: -1;
+        &-top {
+            inset-block-start: 0;
+            inset-inline-start: 0;
+            inset-inline-start: 50%;
+            transform: translateX(-50%);
+        }
+        &-left {
+            inset-block-start: 0;
+            inset-inline-start: 0;
+        }
+        &-right {
+            inset-block-start: 0;
+            inset-inline-end: 0;
+        }
+        &-line-left {
+            inset-block-start: 0;
+            inset-inline-start: 0;
+            opacity: 0.05;
+        }
+        &-line-right {
+            inset-block-start: 0;
+            inset-inline-end: 0;
+            opacity: 0.05;
+        }
+    }
+}
+
+.breadcrumb-section-inner {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    padding-block-start: rem(60);
+    padding-block-end: rem(60);
+    @include screen(lg) {
+        padding-block-start: rem(70);
+    }
+    @include screen(xl) {
+        padding-block-start: rem(90);
+    }
+    @include screen(xxl) {
+        padding-block-start: rem(120);
+    }
+    &::before {
+        position: absolute;
+        content: "";
+        inset-inline-start: -25%;
+        inset-block-start: 0;
+        width: 150%;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background-image: linear-gradient(90deg,#4D89F900 12%,#4400D9 32%,#121414 68%, #000000);
+        animation: rotate360 15s linear infinite;
+        transform-origin: center;
+        transform-box: fill-box;
+        z-index: -2;
+    }
+
+    &::after {
+        position: absolute;
+        content: "";
+        inset-block-start: .5rem;
+        inset-inline-start: 50%;
+        transform: translateX(-50%);
+        width: 150%;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background: hsl(var(--black)/.9);
+        z-index: -1;
+    }
+}

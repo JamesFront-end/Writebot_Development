@@ -1,0 +1,54 @@
+@use "../global" as *;
+.todo-nav {
+	padding: 1.5rem;
+	position: relative;
+	isolation: isolate;
+	@include screen(md) {
+		position: sticky;
+		top: 100px;
+	}
+	&::after {
+		content: "";
+		position: absolute;
+		inset-block: 0;
+		inset-inline-start: 0;
+		width: 1px;
+		background: linear-gradient(transparent, hsl(var(--white) / 0.5) 30%, hsl(var(--white) / 0.5) 70%, transparent);
+	}
+	&__link {
+		display: flex;
+		align-items: center;
+		gap: 0.75rem;
+		color: hsl(var(--white) / 0.5);
+		&::before {
+			content: "";
+			display: inline-block;
+			width: 0.25rem;
+			height: 0.25rem;
+			border-radius: 50%;
+			background-color: hsl(var(--white) / 0.5);
+			transition: all 0.3s ease;
+		}
+		&:hover {
+			color: hsl(var(--white));
+			&::before {
+				width: 2rem;
+				height: 2px;
+				border-radius: 0;
+				background: linear-gradient(90deg, #6a41fb 30%, #f49959 70%);
+			}
+		}
+		&:focus {
+			color: hsl(var(--white));
+		}
+		&.active {
+			color: hsl(var(--white));
+			&::before {
+				width: 2rem;
+				height: 2px;
+				border-radius: 0;
+				background: linear-gradient(90deg, #6a41fb 30%, #f49959 70%);
+			}
+		}
+	}
+}

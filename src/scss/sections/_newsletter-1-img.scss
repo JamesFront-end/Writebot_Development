@@ -1,0 +1,30 @@
+@use "../global" as *;
+.newsletter-1-img {
+	display: none;
+	@include screen(xl) {
+		display: inline-block;
+		position: absolute;
+		z-index: -1;
+		pointer-events: none;
+		&--1 {
+			inset-inline-start: 120px;
+			inset-block-start: 70px;
+		}
+		&--2 {
+			inset-inline-start: 120px;
+			inset-block-end: 70px;
+		}
+		&--3 {
+			inset-block-start: 55px;
+			inset-inline-end: 90px;
+		}
+		&--4 {
+			inset-block-start: 200px;
+			inset-inline-end: 90px;
+		}
+		&--5 {
+			inset-block-end: 55px;
+			inset-inline-end: 200px;
+		}
+	}
+}

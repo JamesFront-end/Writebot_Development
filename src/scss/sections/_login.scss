@@ -1,0 +1,106 @@
+@use "../global" as *;
+
+.login-page {
+    min-height: 100vh;
+    position: relative;
+    z-index: 1;
+    padding-block-start: rem(50);
+    padding-block-end: rem(20);
+    @include screen (xl) {
+        padding-block-start: rem(80);
+        padding-block-end: rem(30);
+    }
+    @include screen (xxl) {
+        padding-block-start: rem(180);
+        padding-block-end: rem(50);
+    }
+    .login-shape {
+        position: absolute;
+        z-index: -1;
+        &-top {
+            inset-block-start: 0;
+            inset-inline-start: 50%;
+            transform: translateX(-50%);
+        }
+        &-left {
+            inset-block-start: 10%;
+            inset-inline-start: 0;
+        }
+        &-right {
+            inset-block-start: 10%;
+            inset-inline-end: 0;
+        }
+        &-line-left {
+            inset-block-start: 0;
+            inset-inline-start: 0;
+            opacity: 0.05;
+        }
+        &-line-right {
+            inset-block-start: 0;
+            inset-inline-end: 0;
+            opacity: 0.05;
+        }
+    }
+
+    .radar-main-wrapper {
+        @include screen(xl) {
+            width: 500px;
+            height: 500px;
+        }
+        @include screen(xxl) {
+            width: 600px;
+            height: 600px;
+        }
+        .radar-main-shape-text {
+            position: absolute;
+            z-index: -3;
+            inset-block-start: 50%;
+            inset-inline-start: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+}
+
+.login-copyright {
+    padding-block-start: rem(45);
+    @include screen(xl) {
+        padding-block-start: rem(65);
+    }
+    @include screen(xxl) {
+        padding-block-start: rem(115);
+    }
+}
+
+.login-with-btn {
+    width: 204px;
+}
+
+.\:focus-clr-current:focus {
+    color: hsl(var(--neutral-90)/var(--clr-opacity));
+}
+
+.pass-field-area {
+    position: relative;
+    .pass-eye {
+        position: absolute;
+        inset-block-start: 50%;
+        inset-inline-end: rem(20);
+        transform: translateY(-50%);
+        color: #48454E;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: rem(22);
+        i {
+            &.eye-off {
+                display: inline-block;
+            }
+            &.eye-on {
+                display: none;
+            }
+        }
+    }
+}

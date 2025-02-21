@@ -1,0 +1,6 @@
+.border-dashed-x {
+	background-image: linear-gradient(to right, hsl(var(--outline)) 33%, transparent 0%);
+	background-position: bottom;
+	background-size: 0.5rem 1px;
+	background-repeat: repeat-x;
+}

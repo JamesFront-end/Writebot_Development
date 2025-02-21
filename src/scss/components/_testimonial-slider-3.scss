@@ -1,0 +1,38 @@
+@use "../global" as *;
+.testimonial-slider-3 {
+	&__is {
+		@include screen(xmax) {
+			margin-right: -#{rem(300)};
+		}
+	}
+	&__nav {
+		&-prev {
+			width: rem(48);
+			height: rem(48);
+			display: grid;
+			place-content: center;
+			border-radius: 50%;
+			background-color: hsl(var(--white) / 0.1);
+			color: hsl(var(--white));
+			&:hover {
+				background: linear-gradient(270deg, #4d89f9 20%, #704ee7 40%, #e8428c 80%, #ed6d4b 100%);
+			}
+		}
+		&-next {
+			width: rem(48);
+			height: rem(48);
+			display: grid;
+			place-content: center;
+			border-radius: 50%;
+			background: linear-gradient(270deg, #4d89f9 20%, #704ee7 40%, #e8428c 80%, #ed6d4b 100%);
+			background-size: 150%;
+			transition: all 0.4s ease-in-out;
+			background-position: left;
+			color: hsl(var(--white));
+			&:hover {
+				background-position: right;
+				transition: all 0.4s ease-in-out;
+			}
+		}
+	}
+}

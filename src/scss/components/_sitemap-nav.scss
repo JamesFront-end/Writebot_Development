@@ -1,0 +1,41 @@
+@use "../global" as *;
+.sitemap-nav {
+	@include screen(lg) {
+		position: relative;
+		isolation: isolate;
+		&::before {
+			content: "";
+			position: absolute;
+			inset-block: 0;
+			inset-inline-start: 0;
+			width: 1px;
+			background-color: hsl(var(--inverse-surface) / 0.1);
+		}
+		a {
+			position: relative;
+			isolation: isolate;
+			line-height: 1.3;
+			&:hover {
+				&::before {
+					content: "";
+					position: absolute;
+					inset-block: 0;
+					inset-inline-end: calc(100% - 1px);
+					width: 2px;
+					background-color: hsl(var(--primary));
+				}
+			}
+			&.active {
+				color: hsl(var(--primary));
+				&::before {
+					content: "";
+					position: absolute;
+					inset-block: 0;
+					inset-inline-end: calc(100% - 1px);
+					width: 2px;
+					background-color: hsl(var(--primary));
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,19 @@
+@use "../global" as *;
+.ai-integration-section {
+	background-image: url(../img/ai-integration-bg.png);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	@include screen(xxl) {
+		position: relative;
+		isolation: isolate;
+        &::after {
+            content: url(../img/icon-chat.png);
+            position: absolute;
+            inset-inline-start: 10%;
+            inset-block-start: 50%;
+            transform: translateY(-50%);
+            z-index: -1;
+        }
+	}
+}

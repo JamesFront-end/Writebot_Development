@@ -1,0 +1,13 @@
+.pricing-label {
+	display: block;
+	width: 260px;
+	padding-block: 0.5rem;
+	position: absolute;
+	inset-block-start: 0;
+	inset-inline-end: 0;
+	transform-origin: center;
+	text-align: center;
+	color: hsl(var(--black));
+	font-weight: 600;
+	transform: rotate(38.473deg) translate(25%, -25%);
+}

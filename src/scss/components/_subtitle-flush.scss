@@ -1,0 +1,10 @@
+.subtitle-flush-x {
+	--clr-1: hsl(var(--white));
+	--clr-2: hsl(var(--white));
+	height: 2px;
+	background: linear-gradient(90deg, transparent, var(--clr-1) 40%, var(--clr-2) 60%, transparent);
+	&--secondary {
+		--clr-1: hsl(var(--secondary-key));
+		--clr-2: hsl(var(--secondary-key));
+	}
+}

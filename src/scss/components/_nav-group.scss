@@ -1,0 +1,14 @@
+.nav-group {
+	display: inline-flex;
+	border: 2px solid hsl(var(--neutral-6));
+	border-radius: 0.5rem;
+	.nav-link {
+		&:hover {
+			color: hsl(var(--white));
+		}
+	}
+	.active {
+		color: hsl(var(--white));
+		background-color: hsl(var(--neutral-6));
+	}
+}

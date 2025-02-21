@@ -1,0 +1,27 @@
+@use "../global" as *;
+.fb-card {
+	position: relative;
+	isolation: isolate;
+	&::after {
+		content: "";
+		position: absolute;
+		inset: 0;
+		background-image: linear-gradient(transparent 60%, hsl(var(--neutral-10)) 100%);
+		pointer-events: none;
+	} 
+	&-lists {
+		& + .fb-card-lists {
+			@include screen(xl) {
+				position: relative;
+				isolation: isolate;
+				&::after {
+					content: url(../img/fb-arrow.png);
+					position: absolute;
+					inset-block-end: 5%;
+					inset-inline-start: 0;
+					transform: translateX(-50%);
+				}
+			}
+		}
+	}
+}

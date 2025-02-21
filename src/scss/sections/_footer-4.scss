@@ -1,0 +1,13 @@
+.footer-4 {
+	position: relative;
+	isolation: isolate;
+	&::after {
+		content: url(../img/footer-4-img.png);
+		position: absolute;
+		inset-block-end: 0;
+		inset-inline-start: 50%;
+		transform: translateX(-50%);
+		z-index: -1;
+		pointer-events: none;
+	}
+}

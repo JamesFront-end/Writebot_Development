@@ -1,0 +1,57 @@
+@use "../global" as *;
+
+.ai-application-section {
+    position: relative;
+    z-index: 1;
+    .ai-application-shape {
+        position: absolute;
+        z-index: -1;
+        display: none;
+        @include screen(xl) {
+            display: block;
+        }
+        &-left {
+            inset-block-start: 0;
+            inset-inline-start: calc(50vw - (1140px / 2));
+            animation: toBottomFromTop 4s infinite forwards;
+            @include screen(xxl) {
+                inset-inline-start: calc(50vw - (1320px / 2));
+            }
+        }
+        &-right {
+            inset-block-end: 0;
+            inset-inline-end: calc(50vw - (1140px / 2));
+            animation: toTopFromBottom 4s infinite forwards;
+            animation-delay: 0.5s;
+            @include screen(xxl) {
+                inset-inline-end: calc(50vw - (1320px / 2));
+            }
+        }
+    }
+}
+
+.ai-application-item-wrapper {
+    position: relative;
+    z-index: 1;
+    .ai-application-shape-center {
+        position: absolute;
+        inset-block-start: 50%;
+        inset-inline-start: 50%;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+        display: none;
+        @include screen(lg) {
+            display: block;
+        }
+    }
+}
+
+.ai-app-item + .ai-app-item {
+    margin-block-start: rem(30);
+    @include screen(lg) {
+        margin-block-start: rem(50);
+    }
+    @include screen(xxl) {
+        margin-block-start: rem(80);
+    }
+}

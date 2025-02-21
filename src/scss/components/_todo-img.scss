@@ -1,0 +1,41 @@
+@use "../global" as *;
+.todo-img {
+	position: relative;
+	isolation: isolate;
+	&__1 {
+		display: none;
+		@include screen(md) {
+			display: block;
+			position: absolute;
+			top: 40%;
+			left: 0;
+			transform: translate(-50%, -50%);
+		}
+		@include screen(xl) {
+			top: 50%;
+			transform: translate(0, -50%);
+		}
+		@include screen(max) {
+			top: 70%;
+			transform: translate(-100%, -50%);
+		}
+	}
+	&__2 {
+		display: none;
+		@include screen(md) {
+			display: block;
+			position: absolute;
+			top: 50%;
+			left: 0;
+			transform: translateX(-15%);
+		}
+		@include screen(xl) {
+			top: 60%;
+			transform: translateX(0);
+		}
+		@include screen(max) {
+			top: 80%;
+			transform: translateX(-50%);
+		}
+	}
+}

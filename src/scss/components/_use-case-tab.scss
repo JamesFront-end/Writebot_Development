@@ -1,0 +1,18 @@
+@use "../global" as *;
+.use-case-tab {
+	&.nav-underline {
+		--bs-nav-underline-link-active-color: hsl(var(--primary-2));
+		--bs-nav-link-hover-color: hsl(var(--primary-2));
+		@include screen(xl) {
+			--bs-nav-underline-gap: 4rem;
+		}
+	}
+	&.nav-bordered {
+		--outline: var(--white);
+	}
+	.nav-link {
+		--bs-nav-link-color: hsl(var(--white));
+		--bs-nav-link-font-size: 18px;
+		font-family: var(--ff-1);
+	}
+}

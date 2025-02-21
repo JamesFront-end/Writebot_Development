@@ -1,0 +1,7 @@
+.todo-nav {
+    &.style-two {
+        &::after {
+            background: linear-gradient(#00B8D900,#00B8D9 30%,#00B8D9 70%,#00B8D900);
+        } 
+    }
+}

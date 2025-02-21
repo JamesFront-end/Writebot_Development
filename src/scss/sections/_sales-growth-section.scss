@@ -1,0 +1,27 @@
+@use "../global" as *;
+.sales-growth-section {
+	background-image: url(../img/sales-growth-section-shape.png);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	
+	&__shape-1 {
+		inset-inline-start: 0;
+		inset-block-start: 5%;
+	}
+	&__shape-2 {
+		inset-inline-end: 0;
+		inset-block-start: 10%;
+		@include screen(max) {
+			transform: translateX(50%);
+		}
+	}
+	&__shape-3 {
+		inset-inline-end: 0;
+		inset-block-start: 50%;
+		transform: translateY(-50%);
+		@include screen(max) {
+			transform: translate(50%, -50%);
+		}
+	}
+}

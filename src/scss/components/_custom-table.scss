@@ -1,0 +1,6 @@
+.custom-table {
+    --bs-table-bg: hsl(var(--background));
+    &.table-striped>tbody>tr:nth-of-type(odd)>* {
+        --bs-table-bg-type: hsl(var(--surface-container));
+    }
+}

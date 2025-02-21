@@ -1,0 +1,125 @@
+@use "../global" as *;
+@use "../bootstrap" as bs;
+.check-box {
+	display: flex;
+	min-height: unset;
+	padding: 0;
+	margin: 0;
+	&--dash {
+		.check-box__input {
+			--checkbox-icon: "\F2EA";
+		}
+	}
+	&-secondary {
+		.check-box__input {
+			--bs-form-check-bg: hsl(var(--secondary));
+		}
+	}
+	&-info {
+		.check-box__input {
+			--bs-form-check-bg: #{bs.$info};
+		}
+	}
+	&-success {
+		.check-box__input {
+			--bs-form-check-bg: #{bs.$success};
+		}
+	}
+	&-warning {
+		.check-box__input {
+			--bs-form-check-bg: #{bs.$warning};
+		}
+	}
+	&-danger {
+		.check-box__input {
+			--bs-form-check-bg: #{bs.$danger};
+		}
+	}
+	&__input {
+		--checkbox-size: 1rem;
+		--checkbox-radius: 2px;
+		--checkbox-border-width: 1px;
+		--checkbox-icon: "\F26E";
+		--bs-form-check-bg: hsl(var(--primary));
+		width: var(--checkbox-size);
+		height: var(--checkbox-size);
+		vertical-align: middle;
+		background-color: transparent;
+		background-image: none;
+		border: var(--checkbox-border-width) solid var(--bs-form-check-bg);
+		flex-shrink: 0;
+
+		&:focus {
+			box-shadow: none;
+		}
+	}
+	&-md {
+		.check-box__input {
+			--checkbox-size: 1.25rem;
+			--checkbox-radius: 3px;
+		}
+	}
+	&-lg {
+		.check-box__input {
+			--checkbox-size: 1.5rem;
+			--checkbox-radius: 4px;
+			--checkbox-border-width: #{rem(2)};
+			&:checked {
+				&::after {
+					font-size: 18px;
+				}
+			}
+		}
+	}
+	&--circle {
+		.check-box__input {
+			--checkbox-radius: 1rem;
+		}
+	}
+	.check-box__input[type="checkbox"] {
+		border-radius: var(--checkbox-radius);
+		float: unset;
+		margin-left: unset;
+		&:checked {
+			position: relative;
+			isolation: isolate;
+			background-color: var(--bs-form-check-bg);
+			border-color: var(--bs-form-check-bg);
+			&::after {
+				content: var(--checkbox-icon);
+				display: inline-block;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				font-family: bootstrap-icons !important;
+				font-style: normal;
+				font-weight: 400 !important;
+				font-variant: normal;
+				text-transform: none;
+				line-height: 1;
+				vertical-align: -0.125em;
+				-webkit-font-smoothing: antialiased;
+			}
+		}
+		&:focus {
+			border-color: var(--bs-form-check-bg);
+		}
+	}
+	@each $color, $shades in $colors {
+		@each $shade, $value in $shades {
+			&-#{$color}-#{$shade} {
+				.check-box__input {
+					--bs-form-check-bg: hsl(var(--#{$color}-#{$shade}));
+					&:focus {
+						border-color: hsl(var(--#{$color}-#{$shade}));
+					}
+					&:checked {
+						background-color: hsl(var(--#{$color}-#{$shade}));
+						border-color: hsl(var(--#{$color}-#{$shade}));
+					}
+				}
+			}
+		}
+	}
+}

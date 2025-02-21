@@ -1,0 +1,26 @@
+.flexible-pricing-btn {
+	color: hsl(var(--white));
+	border: 1px double transparent;
+	background-color: hsl(var(--neutral-6));
+
+	&.active {
+		background-image: linear-gradient(
+				90deg,
+				rgb(0, 0, 0),
+				rgb(15, 25, 60),
+				rgb(255, 70, 70),
+				rgb(15, 25, 60),
+				rgb(0, 0, 0)
+			),
+			radial-gradient(circle at left top, rgb(255, 168, 0), rgb(255, 0, 0), rgb(255, 71, 148));
+		background-origin: border-box;
+		background-clip: padding-box, border-box;
+		background-size: 200%;
+		transition: all 0.4s ease-in-out;
+		background-position: left;
+		&:hover {
+			background-position: right;
+			transition: all 0.4s ease-in-out;
+		}
+	}
+}

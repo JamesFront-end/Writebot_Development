@@ -1,0 +1,427 @@
+@use "../global" as *;
+
+@each $brand, $value in $brand-colors {
+	.clr-#{$brand} {
+		--clr-opacity: 1;
+		color: hsl(var(--#{$brand}) / var(--clr-opacity));
+	}
+	.\:clr-#{$brand} {
+		&:hover {
+			--clr-opacity: 1;
+			color: hsl(var(--#{$brand}) / var(--clr-opacity));
+		}
+	}
+}
+
+@each $color, $shades in $colors {
+	@each $shade, $value in $shades {
+		.clr-#{$color}-#{$shade} {
+			--clr-opacity: 1;
+			color: hsl(var(--#{$color}-#{$shade}) / var(--clr-opacity));
+		}
+		.\:clr-#{$color}-#{$shade}:hover {
+			--clr-opacity: 1;
+			color: hsl(var(--#{$color}-#{$shade}) / var(--clr-opacity));
+		}
+	}
+}
+@each $color, $shades in $bs-colors {
+	@each $shade, $value in $shades {
+		.clr-#{$color}-#{$shade} {
+			--clr-opacity: 1;
+			color: hsl(var(--#{$color}-#{$shade}) / var(--clr-opacity));
+		}
+		.\:clr-#{$color}-#{$shade}:hover {
+			--clr-opacity: 1;
+			color: hsl(var(--#{$color}-#{$shade}) / var(--clr-opacity));
+		}
+	}
+}
+/*
+Design Specific Custom Color 
+*/
+.clr-grad-1 {
+	background: linear-gradient(90deg, #6a41fb 30%, #f49957 70%);
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+.clr-grad-4 {
+	background: linear-gradient(270deg, #4D89F9 1.21%, #704EE7 21.78%, #E8428C 71.65%, #ED6D4B 100%);
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+.clr-grad-6 {
+	background: linear-gradient(84deg, #8A62FB 4.85%, #00B8D9 95.15%);
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+.clr-grad-7 {
+	background: linear-gradient(90deg, #FFC940 0%, #FF7BAD 51.04%, #569CFF 100%);
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+/*
+Design System Custom Color 
+*/
+.clr-white {
+	--clr-opacity: 1;
+	color: hsl(var(--white) / var(--clr-opacity));
+}
+.clr-black {
+	--clr-opacity: 1;
+	color: hsl(var(--black) / var(--clr-opacity));
+}
+.clr-primary {
+	--clr-opacity: 1;
+	color: hsl(var(--primary) / var(--clr-opacity));
+}
+.on-primary {
+	--clr-opacity: 1;
+	color: hsl(var(--on-primary) / var(--clr-opacity));
+}
+.clr-primary-container {
+	--clr-opacity: 1;
+	color: hsl(var(--primary-container) / var(--clr-opacity));
+}
+.on-primary-container {
+	--clr-opacity: 1;
+	color: hsl(var(--on-primary-container) / var(--clr-opacity));
+}
+.clr-primary-fixed {
+	--clr-opacity: 1;
+	color: hsl(var(--primary-fixed) / var(--clr-opacity));
+}
+.on-primary-fixed {
+	--clr-opacity: 1;
+	color: hsl(var(--on-primary-fixed) / var(--clr-opacity));
+}
+.clr-primary-fixed-dim {
+	--clr-opacity: 1;
+	color: hsl(var(--primary-fixed-dim) / var(--clr-opacity));
+}
+.on-primary-fixed-variant {
+	--clr-opacity: 1;
+	color: hsl(var(--on-primary-fixed-variant) / var(--clr-opacity));
+}
+.clr-inverse-primary {
+	--clr-opacity: 1;
+	color: hsl(var(--inverse-primary) / var(--clr-opacity));
+}
+
+.clr-secondary {
+	--clr-opacity: 1;
+	color: hsl(var(--secondary) / var(--clr-opacity));
+}
+.on-secondary {
+	--clr-opacity: 1;
+	color: hsl(var(--on-secondary) / var(--clr-opacity));
+}
+.clr-secondary-container {
+	--clr-opacity: 1;
+	color: hsl(var(--secondary-container) / var(--clr-opacity));
+}
+.on-secondary-container {
+	--clr-opacity: 1;
+	color: hsl(var(--on-secondary-container) / var(--clr-opacity));
+}
+.clr-secondary-fixed {
+	--clr-opacity: 1;
+	color: hsl(var(--secondary-fixed) / var(--clr-opacity));
+}
+.on-secondary-fixed {
+	--clr-opacity: 1;
+	color: hsl(var(--on-secondary-fixed) / var(--clr-opacity));
+}
+.clr-secondary-fixed-dim {
+	--clr-opacity: 1;
+	color: hsl(var(--secondary-fixed-dim) / var(--clr-opacity));
+}
+.on-secondary-fixed-variant {
+	--clr-opacity: 1;
+	color: hsl(var(--on-secondary-fixed-variant) / var(--clr-opacity));
+}
+
+.clr-background {
+	--clr-opacity: 1;
+	color: hsl(var(--background) / var(--clr-opacity));
+}
+.on-background {
+	--clr-opacity: 1;
+	color: hsl(var(--on-background) / var(--clr-opacity));
+}
+.clr-surface {
+	--clr-opacity: 1;
+	color: hsl(var(--surface) / var(--clr-opacity));
+}
+.on-surface {
+	--clr-opacity: 1;
+	color: hsl(var(--on-surface) / var(--clr-opacity));
+}
+.clr-surface-variant {
+	--clr-opacity: 1;
+	color: hsl(var(--surface-variant) / var(--clr-opacity));
+}
+.on-surface-variant {
+	--clr-opacity: 1;
+	color: hsl(var(--on-surface-variant) / var(--clr-opacity));
+}
+.clr-inverse-surface {
+	--clr-opacity: 1;
+	color: hsl(var(--inverse-surface) / var(--clr-opacity));
+}
+.inverse-on-surface {
+	--clr-opacity: 1;
+	color: hsl(var(--inverse-on-surface) / var(--clr-opacity));
+}
+.clr-surface-container-highest {
+	--clr-opacity: 1;
+	color: hsl(var(--surface-container-highest) / var(--clr-opacity));
+}
+.clr-surface-container-high {
+	--clr-opacity: 1;
+	color: hsl(var(--surface-container-high) / var(--clr-opacity));
+}
+.clr-surface-container {
+	--clr-opacity: 1;
+	color: hsl(var(--surface-container) / var(--clr-opacity));
+}
+.clr-surface-container-low {
+	--clr-opacity: 1;
+	color: hsl(var(--surface-container-low) / var(--clr-opacity));
+}
+.clr-surface-container-lowest {
+	--clr-opacity: 1;
+	color: hsl(var(--surface-container-lowest) / var(--clr-opacity));
+}
+.clr-surface-bright {
+	--clr-opacity: 1;
+	color: hsl(var(--surface-bright) / var(--clr-opacity));
+}
+.clr-surface-dim {
+	--clr-opacity: 1;
+	color: hsl(var(--surface-dim) / var(--clr-opacity));
+}
+// Hover color
+.\:clr-white:hover {
+	--clr-opacity: 1;
+	color: hsl(var(--white) / var(--clr-opacity));
+}
+.\:clr-black:hover {
+	--clr-opacity: 1;
+	color: hsl(var(--black) / var(--clr-opacity));
+}
+.\:clr-primary:hover {
+	--clr-opacity: 1;
+	color: hsl(var(--primary) / var(--clr-opacity));
+}
+.\:on-primary:hover {
+	--clr-opacity: 1;
+	color: hsl(var(--on-primary) / var(--clr-opacity));
+}
+.\:clr-primary-container:hover {
+	--clr-opacity: 1;
+	color: hsl(var(--primary-container) / var(--clr-opacity));
+}
+.\:on-primary-container:hover {
+	--clr-opacity: 1;
+	color: hsl(var(--on-primary-container) / var(--clr-opacity));
+}
+.\:clr-primary-fixed:hover {
+	--clr-opacity: 1;
+	color: hsl(var(--primary-fixed) / var(--clr-opacity));
+}
+.\:on-primary-fixed:hover {
+	--clr-opacity: 1;
+	color: hsl(var(--on-primary-fixed) / var(--clr-opacity));
+}
+.\:clr-primary-fixed-dim:hover {
+	--clr-opacity: 1;
+	color: hsl(var(--primary-fixed-dim) / var(--clr-opacity));
+}
+.\:on-primary-fixed-variant:hover {
+	--clr-opacity: 1;
+	color: hsl(var(--on-primary-fixed-variant) / var(--clr-opacity));
+}
+.\:clr-inverse-primary:hover {
+	--clr-opacity: 1;
+	color: hsl(var(--inverse-primary) / var(--clr-opacity));
+}
+
+.\:clr-secondary:hover {
+	--clr-opacity: 1;
+	color: hsl(var(--secondary) / var(--clr-opacity));
+}
+.\:on-secondary:hover {
+	--clr-opacity: 1;
+	color: hsl(var(--on-secondary) / var(--clr-opacity));
+}
+.\:clr-secondary-container:hover {
+	--clr-opacity: 1;
+	color: hsl(var(--secondary-container) / var(--clr-opacity));
+}
+.\:on-secondary-container:hover {
+	--clr-opacity: 1;
+	color: hsl(var(--on-secondary-container) / var(--clr-opacity));
+}
+.\:clr-secondary-fixed:hover {
+	--clr-opacity: 1;
+	color: hsl(var(--secondary-fixed) / var(--clr-opacity));
+}
+.\:on-secondary-fixed:hover {
+	--clr-opacity: 1;
+	color: hsl(var(--on-secondary-fixed) / var(--clr-opacity));
+}
+.\:clr-secondary-fixed-dim:hover {
+	--clr-opacity: 1;
+	color: hsl(var(--secondary-fixed-dim) / var(--clr-opacity));
+}
+.\:on-secondary-fixed-variant:hover {
+	--clr-opacity: 1;
+	color: hsl(var(--on-secondary-fixed-variant) / var(--clr-opacity));
+}
+
+.\:clr-background:hover {
+	--clr-opacity: 1;
+	color: hsl(var(--background) / var(--clr-opacity));
+}
+.\:on-background:hover {
+	--clr-opacity: 1;
+	color: hsl(var(--on-background) / var(--clr-opacity));
+}
+.\:clr-surface:hover {
+	--clr-opacity: 1;
+	color: hsl(var(--surface) / var(--clr-opacity));
+}
+.\:on-surface:hover {
+	--clr-opacity: 1;
+	color: hsl(var(--on-surface) / var(--clr-opacity));
+}
+.\:clr-surface-variant:hover {
+	--clr-opacity: 1;
+	color: hsl(var(--surface-variant) / var(--clr-opacity));
+}
+.\:on-surface-variant:hover {
+	--clr-opacity: 1;
+	color: hsl(var(--on-surface-variant) / var(--clr-opacity));
+}
+.\:clr-inverse-surface:hover {
+	--clr-opacity: 1;
+	color: hsl(var(--inverse-surface) / var(--clr-opacity));
+}
+.\:inverse-on-surface:hover {
+	--clr-opacity: 1;
+	color: hsl(var(--inverse-on-surface) / var(--clr-opacity));
+}
+.\:clr-surface-container-highest:hover {
+	--clr-opacity: 1;
+	color: hsl(var(--surface-container-highest) / var(--clr-opacity));
+}
+.\:clr-surface-container-high:hover {
+	--clr-opacity: 1;
+	color: hsl(var(--surface-container-high) / var(--clr-opacity));
+}
+.\:clr-surface-container:hover {
+	--clr-opacity: 1;
+	color: hsl(var(--surface-container) / var(--clr-opacity));
+}
+.\:clr-surface-container-low:hover {
+	--clr-opacity: 1;
+	color: hsl(var(--surface-container-low) / var(--clr-opacity));
+}
+.\:clr-surface-container-lowest:hover {
+	--clr-opacity: 1;
+	color: hsl(var(--surface-container-lowest) / var(--clr-opacity));
+}
+.\:clr-surface-bright:hover {
+	--clr-opacity: 1;
+	color: hsl(var(--surface-bright) / var(--clr-opacity));
+}
+.\:clr-surface-dim:hover {
+	--clr-opacity: 1;
+	color: hsl(var(--surface-dim) / var(--clr-opacity));
+}
+
+.clr-opacity-05 {
+	--clr-opacity: 0.05;
+}
+.clr-opacity-1 {
+	--clr-opacity: 0.1;
+}
+
+.clr-opacity-2 {
+	--clr-opacity: 0.2;
+}
+
+.clr-opacity-3 {
+	--clr-opacity: 0.3;
+}
+
+.clr-opacity-4 {
+	--clr-opacity: 0.4;
+}
+
+.clr-opacity-5 {
+	--clr-opacity: 0.5;
+}
+
+.clr-opacity-6 {
+	--clr-opacity: 0.6;
+}
+
+.clr-opacity-7 {
+	--clr-opacity: 0.7;
+}
+
+.clr-opacity-8 {
+	--clr-opacity: 0.8;
+}
+
+.clr-opacity-9 {
+	--clr-opacity: 0.9;
+}
+.clr-opacity-100 {
+	--clr-opacity: 1;
+}
+.\:clr-opacity-1:hover {
+	--clr-opacity: 0.1;
+}
+
+.\:clr-opacity-2:hover {
+	--clr-opacity: 0.2;
+}
+
+.\:clr-opacity-3:hover {
+	--clr-opacity: 0.3;
+}
+
+.\:clr-opacity-4:hover {
+	--clr-opacity: 0.4;
+}
+
+.\:clr-opacity-5:hover {
+	--clr-opacity: 0.5;
+}
+
+.\:clr-opacity-6:hover {
+	--clr-opacity: 0.6;
+}
+
+.\:clr-opacity-7:hover {
+	--clr-opacity: 0.7;
+}
+
+.\:clr-opacity-8:hover {
+	--clr-opacity: 0.8;
+}
+
+.\:clr-opacity-9:hover {
+	--clr-opacity: 0.9;
+}
+.\:clr-opacity-100:hover {
+	--clr-opacity: 1;
+}

@@ -1,0 +1,53 @@
+@use "../bootstrap" as bs;
+.avatar {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	& > * {
+		display: grid;
+		place-content: center;
+	}
+	&__status {
+		--stat-size: 0.5rem;
+		width: var(--stat-size);
+		height: var(--stat-size);
+		border-radius: 50%;
+		position: absolute;
+		top: 100%;
+		left: 100%;
+		transform: translate(-100%, -100%);
+		outline: 2px solid hsl(var(--background));
+		&--active {
+			background-color: bs.$success;
+		}
+		&--away {
+			background-color: bs.$danger;
+		}
+		&--idle {
+			background-color: bs.$warning;
+		}
+	}
+	&--group {
+		> * + * {
+			position: relative;
+			transform: translateX(-25%);
+			z-index: -1;
+		}
+		> * + * + * {
+			transform: translateX(-50%);
+			z-index: -2;
+		}
+		> * + * + * + * {
+			transform: translateX(-75%);
+			z-index: -3;
+		}
+		> * + * + * + * + * {
+			transform: translateX(-100%);
+			z-index: -4;
+		}
+		.avatar {
+			outline: 0.25rem solid hsl(var(--background));
+			filter: drop-shadow(0 0 0.25rem hsl(var(--shadow) / 0.15));
+		}
+	}
+}

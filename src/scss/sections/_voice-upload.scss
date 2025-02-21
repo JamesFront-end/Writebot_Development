@@ -1,0 +1,43 @@
+@use "../global" as *;
+
+.voice-upload-section {
+    position: relative;
+    .section-right-bg-shape {
+        position: absolute;
+        inset-block-start: 0;
+        inset-inline-end: 0;
+        z-index: -1;
+    }
+}
+
+.section-top-bg-shape {
+    position: absolute;
+    inset-block-start: -32%;
+    inset-inline-start: 50%;
+    transform: translateX(-50%);
+    z-index: -2;
+}
+
+.section-title-obj-img {
+    position: absolute;
+    inset-block-start: 0;
+    inset-inline-start: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+} 
+
+.voice-upload-tab-content {
+    isolation: isolate;
+    padding-block-start: 90px;
+    .voice-upload-tab-bg {
+        position: absolute;
+        z-index: -1;
+        inset-block-start: 35px;
+        inset-inline-start: 47%;
+        transform: translateX(-50%);
+        max-width: 100%;
+        @include screen(lg) {
+            max-width: 120%;
+        }
+    }
+}

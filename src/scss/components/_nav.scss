@@ -1,0 +1,16 @@
+@use "../global" as *;
+.nav {
+	--bs-nav-link-padding-x: 1.5rem;
+	--bs-nav-link-color: hsl(var(--on-background));
+	--bs-nav-link-hover-color: hsl(var(--primary));
+	&-underline {
+        --bs-nav-underline-gap: 1.5rem;
+		--bs-nav-underline-link-active-color: hsl(var(--primary));
+	}
+	&-bordered {
+		border-bottom: 1px solid hsl(var(--outline) / 0.25);
+	}
+	&-link {
+		font-weight: 700;
+	}
+}

@@ -1,0 +1,53 @@
+@use "../global" as *;
+
+.key-feature-section {
+    position: relative;
+    z-index: 1; 
+    padding-block-start: rem(50);
+    @include screen(xl) {
+        padding-block-start: rem(133);
+    }
+    @include screen(xxl) {
+        padding-block-start: rem(83);
+    }
+}
+
+.key-feature-wrapper {
+    position: relative;
+    z-index: 1; 
+    .key-feature-line-left {
+        position: absolute;
+        inset-inline-start: 0;
+        z-index: -1;
+        display: none;
+        @include screen(lg) {
+            display: block;
+            inset-block-end: 0;
+        }
+        @include screen(xl) {
+            inset-block-end: -125px;
+        }
+        @include screen(xxl) {
+            inset-block-end: -175px;
+        }
+    }
+}
+
+.key-feature-card {
+    padding: rem(20);
+    transition: all 0.3s;
+    border: 1px solid transparent;
+    height: 100%;
+    @include screen(md) {
+        padding: rem(20) rem(30) rem(35) rem(30);
+    }
+    &:hover {
+        border-radius: 24px;
+        border: 1px solid rgba(72, 69, 78, 0.50);
+        background: rgba(16, 20, 21, 0.50);
+    }
+    &__img {
+        height: 140px;
+        object-fit: cover;
+    }
+}

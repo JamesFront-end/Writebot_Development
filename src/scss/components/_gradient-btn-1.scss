@@ -1,0 +1,32 @@
+.gradient-btn-1 {
+	color: hsl(var(--white));
+	&:hover {
+		&::before {
+			background-position: right;
+		}
+	}
+	&::before {
+		content: "";
+		position: absolute;
+		inset: 0;
+		z-index: -1;
+		border-radius: inherit;
+		background-image: linear-gradient(
+			90deg,
+			rgba(13, 0, 59, 1) 21%,
+			rgba(238, 149, 88, 1) 50%,
+			rgba(13, 0, 59, 1) 80%
+		);
+		background-size: 250%;
+		background-position: left;
+		transition: all 0.5s ease;
+	}
+	&::after {
+		content: "";
+		position: absolute;
+		inset: -1px;
+		z-index: -2;
+		border-radius: inherit;
+		background-image: linear-gradient(90deg, #6a41fb 10.35%, #f49959 92.29%);
+	}
+}

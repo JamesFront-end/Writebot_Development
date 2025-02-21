@@ -1,0 +1,47 @@
+@use "../global" as *;
+.pricing-section-3 {
+	@include screen(xl) {
+		position: relative;
+		isolation: isolate;
+	}
+	&__avatar-group {
+		@include screen(max) {
+			position: relative;
+			isolation: isolate;
+			&::before {
+				content: url(../img/pricing-section-3-shape-2.png);
+				position: absolute;
+				inset-block-start: 50%;
+				inset-inline-start: 0;
+				transform: translateX(-50%);
+			}
+			&::after {
+				content: url(../img/pricing-section-3-shape-3.png);
+				position: absolute;
+				inset-inline-start: 0;
+				inset-block-end: 40%;
+				transform: translateX(30%);
+			}
+		}
+	}
+	&__title {
+		@include screen(max) {
+			position: relative;
+			isolation: isolate;
+			&::after {
+				content: url(../img/pricing-section-3-shape-4.png);
+				position: absolute;
+				inset-block-start: 50%;
+				inset-inline-end: 5%;
+				transform: translateY(-25%);
+				z-index: -1;
+			}
+		}
+		@include screen(xmax) {
+			&::after {
+				inset-inline-end: 15%;
+			}
+		}
+	}
+}
+

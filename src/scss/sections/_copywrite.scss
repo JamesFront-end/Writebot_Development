@@ -1,0 +1,69 @@
+@use "../global" as *;
+
+.copywrite-overview-list {
+    li {
+        transition: all 0.3s;
+        position: relative;
+        padding-inline-start: rem(25);
+        &:hover {
+            color: #E1E3E3;
+            padding-inline-start: rem(42);
+            &::before {
+                width: 35px;
+                height: 2px;
+                background-color: hsl(var(--primary-key));
+                border-radius: 0;
+            }
+        }
+        &::before {
+            position: absolute;
+            content: '';
+            inset-block-start: 50%;
+            inset-inline-start: 0;
+            width: 5px;
+            height: 5px;
+            background-color: #5c6060;
+            border-radius: 50%;
+            margin-block-start: -2px;
+            transition: all 0.3s;
+        }
+    }
+}
+
+.copywrite-overview-wrapper {
+    position: relative;
+    z-index: 1;
+    padding: rem(30);
+    position: sticky;
+    top: 50px;
+    @include screen(sm) {
+        padding: rem(50);
+    }
+    .copywrite-line {
+        position: absolute;
+        z-index: -1;
+        &-top {
+            inset-block-start: 0;
+            inset-inline-start: 50%;
+            transform: translateX(-50%);
+        }
+        &-bottom {
+            inset-block-end: 0;
+            inset-inline-start: 50%;
+            transform: translateX(-50%);
+        }
+        &-left {
+            inset-block-start: 0;
+            inset-inline-start: 0;
+            height: 100%;
+        }
+        &-right {
+            inset-block-start: 0;
+            inset-inline-end: 0;
+            height: 100%;
+        }
+    }
+    .copywrite-logo {
+        max-height: 16px;
+    }
+}

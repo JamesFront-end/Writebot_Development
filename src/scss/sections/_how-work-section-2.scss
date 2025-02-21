@@ -1,0 +1,72 @@
+@use "../global" as *;
+
+.how-work-section-2 {
+    position: relative;
+    z-index: 1;
+    .how-work-section-2-shape {
+        position: absolute;
+        inset-block-start: -75%;
+        inset-inline-end: 0;
+        z-index: -1;
+    }
+}
+
+.how-work-2-wrapper {
+    position: relative;
+    z-index: 1;
+    .how-work-2-wrapper-line {
+        position: absolute;
+        inset-block-end: -95px;
+        inset-inline-start: 0;
+        display: none;
+        @include screen(lg) {
+            display: block;
+        }
+    }
+}
+
+.how-work-accordion {
+    .accordion-item {
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid #101415;
+        .accordion-button {
+            color: #C4C7C7;
+            background-color: transparent;
+            font-size: rem(18);
+            font-weight: 800;
+            box-shadow: none;
+            padding: rem(20) 0;
+            &::after {
+                display: none;
+            }
+            &[aria-expanded="true"] {
+                i {
+                    background-color: rgba(86, 26, 255, 0.48);
+                }
+            }
+            i {
+                width: 28px;
+                height: 28px;
+                background-color: rgba(86, 26, 255, 0.08);
+                border: 1.167px solid rgba(86, 26, 255, 0.48);
+                border-radius: 50%;
+                color: #C9C5D0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: rem(16);
+                margin-right: rem(12);
+                transition: all 0.3s;
+            }
+        }
+        .accordion-body,
+        .accordion-body * {
+            color: #C4C7C7;
+        }
+        .accordion-body {
+            padding-block-start: 0;
+            padding-inline-start: 0;
+        }
+    }
+}

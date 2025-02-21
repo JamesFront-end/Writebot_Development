@@ -1,0 +1,19 @@
+@use "../global" as *;
+
+.selected-product {
+	&.active {
+		.selected-product__card {
+			@include screen(lg) {
+				display: block;
+			}
+		}
+	}
+	&__card {
+		@include screen(md) {
+			margin-top: -0.25rem;
+		}
+		@include screen(lg) {
+			display: none;
+		}
+	}
+}

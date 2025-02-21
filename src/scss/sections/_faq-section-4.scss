@@ -1,0 +1,42 @@
+@use "../global" as *;
+.faq-section-4 {
+	background-image: url(../img/faq-section-4-bg.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center top;
+	&__title {
+		@include screen(max) {
+			position: relative;
+			isolation: isolate;
+
+			&::after {
+				content: url(../img/faq-section-4-shape-1.png);
+				position: absolute;
+				inset-block-start: 50%;
+				inset-inline-end: 5%;
+				transform: translateY(-25%);
+				z-index: -1;
+			}
+		}
+		@include screen(xmax) {
+
+			&::after {
+				inset-inline-end: 15%;
+			}
+		}
+		&-is {
+			@include screen(max) {
+				position: relative;
+				isolation: isolate;
+				&::before {
+					content: url(../img/faq-section-4-shape-2.png);
+					position: absolute;
+					inset-block-start: 0;
+					inset-inline-start: 0;
+					transform: translateX(-100%);
+					z-index: -1;
+				}
+			}
+		}
+	}
+}

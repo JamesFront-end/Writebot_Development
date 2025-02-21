@@ -1,0 +1,31 @@
+// Section Spacing
+.section-space-xsm-y {
+	padding-block-start: clamp(1rem, 1.68vw + 1rem, 2rem);
+	padding-block-end: clamp(1rem, 1.68vw + 1rem, 2rem);
+}
+.section-space-sm-y {
+	padding-block-start: clamp(2rem, 3.25vw + 1rem, 3.75rem);
+	padding-block-end: clamp(2rem, 3.25vw + 1rem, 3.75rem);
+}
+.section-space-y {
+	padding-block-start: clamp(3.75rem, 6.5vw + 1rem, 7.5rem);
+	padding-block-end: clamp(3.75rem, 6.5vw + 1rem, 7.5rem);
+}
+.section-space-top {
+	padding-block-start: clamp(3.75rem, 6.5vw + 1rem, 7.5rem);
+}
+.section-space-sm-top {
+	padding-block-start: clamp(2rem, 3.25vw + 1rem, 3.75rem);
+}
+.section-space-xsm-top {
+	padding-block-start: clamp(1rem, 1.68vw + 1rem, 2rem);
+}
+.section-space-bottom {
+	padding-block-end: clamp(3.75rem, 6.5vw + 1rem, 7.5rem);
+}
+.section-space-sm-bottom {
+	padding-block-end: clamp(2rem, 3.25vw + 1rem, 3.75rem);
+}
+.section-space-xsm-bottom {
+	padding-block-end: clamp(1rem, 1.68vw + 1rem, 2rem);
+}

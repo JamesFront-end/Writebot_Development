@@ -1,0 +1,47 @@
+@use "../global" as *;
+.testimonial-section-2-wrapper {
+    position: relative;
+    isolation: isolate;
+
+    .testimonial-section-2-el {
+        position: absolute;
+        z-index: -1;
+        &-shade {
+            inset-block-start: 50%;
+            inset-inline-start: 63%;
+            transform: translate(-50%, -50%);
+        }
+        &-1 {
+            display: none;
+            @include screen(md) {
+                display: inline-block;
+                inset-block-start: 0;
+                inset-inline-start: 70%;
+            }
+            @include screen(lg) {
+                inset-block-start: 0;
+                inset-inline-start: 37%;
+            }
+        }
+        &-2 {
+            display: none;
+            @include screen(md) {
+                display: inline-block;
+                inset-block-start: 10%;
+                inset-inline-start: 58%;
+            }
+            @include screen(lg) {
+                inset-block-start: 24%;
+                inset-inline-start: 39%;
+            }
+        }
+        &-3 {
+            inset-block-end: 17%;
+            inset-inline-start: 0;
+            display: none;
+            @include screen(xl) {
+                display: inline-block;
+            }
+        }
+    }
+}

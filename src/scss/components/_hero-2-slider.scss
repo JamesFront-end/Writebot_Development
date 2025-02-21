@@ -1,0 +1,16 @@
+.hero-2-slider {
+	&-thumb {
+		.swiper-slide-thumb-active {
+			.hero-2-slider-thumb__img {
+				background: linear-gradient(black, black) padding-box,
+					linear-gradient(270deg, #4d89f9 1.21%, #704ee7 21.78%, #e8428c 71.65%, #ed6d4b 100%) border-box;
+				border-radius: 0.5rem;
+				border: 1px solid transparent;
+			}
+		}
+		.hero-2-slider-thumb__img {
+			border-radius: 0.5rem;
+			border: 1px solid transparent;
+		}
+	}
+}

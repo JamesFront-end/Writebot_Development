@@ -1,0 +1,62 @@
+@use "../global" as *;
+.hero-2 {
+	padding-block: 72px;
+	background-image: url(../img/hero-2-bg.png);
+	background-position: center bottom;
+	background-size: cover;
+	background-repeat: no-repeat;
+	@include screen(lg) {
+		padding-block-start: 160px;
+	}
+	&__title {
+		padding: 1rem;
+		position: relative;
+		isolation: isolate;
+		background-image: radial-gradient(circle closest-side, rgb(255, 71, 148) calc(100% - 0.5px), transparent 100%),
+			radial-gradient(circle closest-side, rgb(255, 168, 0) calc(100% - 0.5px), transparent 100%),
+			radial-gradient(circle closest-side, rgb(255, 0, 0) calc(100% - 0.5px), transparent 100%),
+			radial-gradient(circle closest-side, rgb(248, 124, 22) calc(100% - 0.5px), transparent 100%);
+		background-position: 0 0, 100% 0, 0 100%;
+		background-repeat: repeat-x, repeat-y;
+		background-size: 4px 2px, 2px 4px;
+		&::before {
+			content: "";
+			width: 0.5rem;
+			height: 0.5rem;
+			position: absolute;
+			inset-inline-start: 0;
+			inset-block-start: 0;
+			background-color: hsl(var(--white));
+		}
+		&::after {
+			content: "";
+			width: 0.5rem;
+			height: 0.5rem;
+			position: absolute;
+			inset-inline-end: 0;
+			inset-block-end: 0;
+			background-color: hsl(var(--white));
+		}
+		span {
+			&::before {
+				content: "";
+				width: 0.5rem;
+				height: 0.5rem;
+				position: absolute;
+				inset-inline-end: 0;
+				inset-block-start: 0;
+				background-color: hsl(var(--white));
+			}
+			&::after {
+				content: "";
+				width: 0.5rem;
+				height: 0.5rem;
+				position: absolute;
+				inset-inline-start: 0;
+				inset-block-end: 0;
+				background-color: hsl(var(--white));
+			}
+		}
+	}
+
+}

@@ -1,0 +1,134 @@
+@use "../global" as *;
+
+.pricing-difference-wrapper {
+    overflow-x: auto;
+    &-inner {
+        padding-block: rem(40);
+        position: relative;
+        min-width: 930px;
+        @include screen(lg) {
+            width: auto;
+        }
+        .pricing-line {
+            position: absolute;
+            display: none;
+            @include screen(lg) {
+                display: block;
+            }
+            &-top {
+                inset-block-start: -115px;
+                inset-inline-start: 0;
+            }
+            &-bottom {
+                inset-block-end: 0;
+                inset-inline-start: 20%;
+            }
+            &-right {
+                inset-block-start: -15px;
+                inset-inline-end: 0;
+                height: 101%;
+            }
+        }
+    }
+}
+
+.pricing-price-head {
+    position: sticky;
+    display: flex;
+    justify-content: flex-end;
+    text-align: center;
+    padding-block-end: rem(30);
+    padding-inline-end: rem(30);
+    top: 100px;
+    z-index: 1;
+    @include screen(xl) {
+        padding-inline-end: rem(50);
+    }
+    @include screen(xxl) {
+        padding-inline-end: rem(100);
+    }
+    &::after {
+        position: absolute;
+        content: "";
+        inset-block-end: 0;
+        inset-inline-start: 0;
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(to right,rgba(72,69,78,0),#48454e);
+        opacity: .65;
+    }
+    .single-price-head {
+        width: 220px;
+        position: sticky;
+        top: 100px;
+        background-color: #000;
+    }
+}
+
+.pricing-single-row {
+    &:last-child {
+        .pricing-single-list {
+            &::after {
+                display: none;
+            }
+        }
+    }
+}
+
+.pricing-single-list {
+    position: relative;
+    padding-block: rem(20);
+    padding-inline-end: rem(30);
+    @include screen(xl) {
+        padding-inline-end: rem(50);
+    }
+    @include screen(xxl) {
+        padding-inline-end: rem(100);
+    }
+    &::before,
+    &::after {
+        position: absolute;
+        content: "";
+        inset-inline-start: 0;
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(to right,rgba(72,69,78,0),#48454e);
+        opacity: .75;
+    }
+    &::before {
+        inset-block-start: 0;
+    }
+    &::after {
+        inset-block-end: 0;
+    }
+    li {
+        .pricing-single-caption {
+            flex-grow: 1;
+        }
+        .pricing-single-feature {
+            width: 220px;
+            text-align: center;
+        }
+    }
+} 
+
+.pricing-faq-section {
+    position: relative;
+    z-index: 1;
+    .pricing-fag-shape {
+        position: absolute;
+        z-index: -1;
+        &-top-left {
+            inset-block-start: 0;
+            inset-inline-start: 0;
+        }
+        &-top-right {
+            inset-block-start: 0;
+            inset-inline-end: 0;
+        }
+        &-bottom-right {
+            inset-block-end: 0;
+            inset-inline-end: 0;
+        }
+    }
+}

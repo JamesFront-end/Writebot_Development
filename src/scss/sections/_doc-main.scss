@@ -1,0 +1,7 @@
+@use "../global" as *;
+.doc-main {
+	@include screen(lg) {
+		display: flex;
+        align-items: flex-start;
+	}
+}

@@ -1,0 +1,7 @@
+.gradient-stroke {
+	--_clr-1: #4d89f9;
+	--_clr-2: #ed6d4b;
+	background: -webkit-linear-gradient(115deg, var(--_clr-1), var(--_clr-2));
+	-webkit-background-clip: text;
+	-webkit-text-stroke: 2px transparent;
+}

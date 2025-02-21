@@ -1,0 +1,35 @@
+@use "../global" as *;
+
+.why-choose-wrapper {
+    isolation: isolate;
+    @include screen(xs) {
+        padding-inline: rem(20);
+    }
+    @include screen(sm) {
+        padding-inline: rem(40);
+    }
+    @include screen(xl) {
+        padding-inline: rem(60);
+    }
+    @include screen(xxl) {
+        padding-inline: rem(70);
+    }
+    .why-choose-wrapper-el {
+        position: absolute;
+        z-index: -1;
+        &-digit {
+            inset-block-start: 0;
+            inset-inline-start: 50%;
+            transform: translateX(-50%);
+            opacity: 0.49;
+        }
+        &-top {
+            inset-block-start: 12%;
+            inset-inline-end: 10%;
+        }
+        &-bottom {
+            inset-block-end: 0;
+            inset-inline-end: 0;
+        }
+    }
+}

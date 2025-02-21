@@ -1,0 +1,32 @@
+.gradient-flow {
+	--_clr-1: #8b62fbb2;
+	--_clr-2: transparent;
+	--_border-clr-1: #8b62fbb2;
+	--_border-clr-2: #00B8D9;
+
+	position: relative;
+	isolation: isolate;
+	padding-inline: 0.25rem;
+
+	&::after {
+		content: "";
+		position: absolute;
+		z-index: -1;
+		width: 0.25rem;
+		height: 100%;
+		background-image: linear-gradient(var(--_border-clr-1) 1%, var(--_border-clr-2)99%);
+		pointer-events: none;
+	}
+	&--start {
+		background-image: linear-gradient(90deg, var(--_clr-1) 5%, var(--_clr-2) 95%);
+		&::after {
+			inset-inline-start: 0;
+		}
+	}
+	&--end {
+		background-image: linear-gradient(90deg, var(--_clr-2) 5%, var(--_clr-1) 95%);
+		&::after {
+			inset-inline-end: 0;
+		}
+	}
+}

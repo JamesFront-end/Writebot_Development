@@ -1,0 +1,314 @@
+@use "../global" as *;
+
+.hero-7 {
+    padding-block-start: rem(75);
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    &::before,
+    &::after {
+        position: absolute;
+        content: '';
+        border-radius: 50%;
+        filter: blur(97.87px);
+        opacity: 0.2;
+    }
+    &::before {
+        background: linear-gradient(76deg, #FFC83A 13.64%, #FF008A 46.53%, #6100FF 78.88%);
+        width: 1301.75px;
+        height: 498px;
+        inset-block-start: -390px;
+        inset-inline-start: 0;
+        animation: gradientLeftRight 5s linear infinite;
+    }
+    &::after {
+        background: linear-gradient(95deg, #001AFF 8.97%, #6EE5C2 94.65%);
+        width: 1045.54px;
+        height: 498px;
+        inset-block-start: -390px;
+        inset-inline-end: 0;
+        animation: gradientRightLeft 5s ease infinite;
+    }
+    .hero-7-shape {
+        position: absolute;
+        z-index: -1;
+        &-top-line {
+            inset-block-start: 0;
+            inset-inline-start: 50%;
+            transform: translateX(-50%);
+        }
+        &-top-dots {
+            inset-block-start: 0;
+            inset-inline-start: 50%;
+            transform: translateX(-50%);
+        }
+        &-text {
+            inset-inline-start: 50%;
+            inset-block-start: 13%;
+            transform: translateX(-50%);
+        }
+    }
+
+    .hero-7-main-cirlce {
+        position: absolute;
+        inset-block-start: -150%;
+        inset-inline-start: 50%;
+        transform: translateX(-50%);
+        width: 2031px;
+        height: 1655px;
+        isolation: isolate;
+        @include screen(lg) {
+            inset-block-start: -128%;
+        }
+        @include screen(xl) {
+            inset-block-start: -112%;
+        }
+        @include screen(xxl) {
+            inset-block-start: -75%;
+        }
+        &::before {
+            position: absolute;
+            content: '';
+            inset-block-start: 0;
+            inset-inline-start: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            opacity: 0.5;
+            background: #090808;
+            z-index: -1;
+        }
+        &-left {
+            position: absolute;
+            width: 491.624px;
+            height: 420.945px;
+            transform: rotate(23.505deg);
+            background-color: #3A6C38;
+            opacity: 0.3;
+            filter: blur(100px);
+            inset-block-end: 2%;
+            inset-inline-start: 0;
+            z-index: -2;
+            animation: bgAnimeOne 5s infinite linear;
+        }
+        &-right {
+            position: absolute;
+            width: 491.624px;
+            height: 420.945px;
+            transform: rotate(23.505deg);
+            background-color: #006C9C;
+            opacity: 0.3;
+            filter: blur(100px);
+            inset-block-end: 2%;
+            inset-inline-end: 0;
+            z-index: -2;
+            animation: bgAnimeTwo 5s infinite linear;
+        }
+    }
+}
+
+.hero-7-video-main {
+    position: relative;
+    z-index: 3;
+    margin-block-start: -165px;
+    @include screen(sm) {
+        margin-block-start: -200px;
+    }
+}
+
+.hero-7-video-wrapper {
+    position: relative;
+    padding-block: rem(18);
+    padding-inline: rem(17);
+    isolation: isolate;
+    &::before {
+        position: absolute;
+        content: '';
+        inset-block-start: 0;
+        inset-inline-start: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: rem(24);
+        opacity: 0.1;
+        background-color: #C9BFFF;
+        z-index: -1;
+    }
+    &::after {
+        position: absolute;
+        content: '';
+        inset-block-start: 90%;
+        inset-inline-start: 50%;
+        transform: translateX(-50%);
+        width: 1168px;
+        height: 497px;
+        border-radius: 1168px;
+        opacity: 0.5;
+        background: linear-gradient(180deg, #5C2BFF 0%, rgba(174, 43, 255, 0.00) 100%);
+        z-index: -1;
+        filter: blur(200px);
+    }
+    .hero-7-video-wrapper-inner {
+        height: 220px;
+        border-radius: rem(24);
+        overflow: hidden;
+        @include screen(sm) {
+            height: 302px;
+            background-color: #48454E;
+        }
+        @include screen(md) {
+            height: 414px;
+        }
+        @include screen(lg) {
+            height: 367px;
+        }
+        @include screen(xl) {
+            height: 439px;
+        }
+        @include screen(xxl) {
+            height: 514px;
+        }
+    }
+    .hero-7-video-frame {
+        position: absolute;
+        inset-block-end: -38%;
+        inset-inline-start: 50%;
+        transform: translateX(-50%);
+        z-index: -1;
+    }
+}
+
+.hero-7-circle-wrapper {
+    position: relative;
+    isolation: isolate;
+    width: 300px;
+    height: 300px;
+    margin-inline: auto;
+    z-index: 1;
+    @include screen(sm) {
+        width: 400px;
+        height: 400px;
+    }
+    @include screen(xxl) {
+        width: 500px;
+        height: 500px;
+    }
+    .hero-7-circle {
+        position: absolute;
+        border-radius: 50%;
+        &-one {
+            width: 100%;
+            height: 100%;
+            inset-block: 0;
+            inset-inline: 0;
+            border: 0.786px solid #211F24;
+            background-color: #000;
+            opacity: 0.5;
+            z-index: -4;
+        }
+        &-two {
+            position: absolute;
+            width: calc(100% - 70px);
+            height: calc(100% - 70px);
+            inset-block-start: 50%;
+            inset-inline-start: 50%;
+            transform: translate(-50%, -50%);
+            border: 0.786px solid #211F24;
+            background-color: #000;
+            opacity: 0.5;
+            z-index: -3;
+            @include screen(xxl) {
+                width: calc(100% - 150px);
+                height: calc(100% - 150px);
+            }
+        }
+        &-three {
+            position: absolute;
+            width: 407px;
+            height: 407px;
+            background: linear-gradient(180deg, #5C2BFF 0%, rgba(92, 43, 255, 0.00) 100%);
+            filter: blur(200px);
+            border-radius: 50%;
+            inset-block-start: 60%;
+            inset-inline-start: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -2;
+        }
+    }
+    .hero-7-radar {
+        position: absolute;
+        inset-block-start: 50%;
+        inset-inline-start: 50%;
+        transform: translate(-50%, -50%);
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        overflow: hidden; 
+        @include screen(sm) {
+            width: 320px;
+            height: 320px;
+        }
+        &::before {
+            position: absolute;
+            content: '';
+            inset-block-start: 0;
+            inset-inline-start: 0;
+            background: linear-gradient(247deg, #5C2BFF -50.02%, rgba(92, 43, 255, 0.00) 54.9%);
+            clip-path: polygon(0 0, 50% 50%, 100% 0);
+            width: 100%;
+            height: 100%;
+            animation: radar 5s infinite linear;
+        }
+
+        .animated-text-wrapper {
+            display: flex;
+            justify-content: center;
+            position: relative;
+            z-index: 9;
+            margin-top: rem(38);
+            .cd-headline {
+                border-radius: 8px;
+                background: rgba(86, 26, 255, 0.12);
+                font-size: rem(12);
+                font-weight: 700;
+                color: hsl(var(--white));
+                padding-block: rem(4);
+                padding-inline: rem(16);
+            }
+        }
+    }
+    .hero-7-logo-wrapper {
+        position: absolute;
+        inset-block-start: 50%;
+        inset-inline-start: 50%;
+        transform: translate(-50%, -50%);
+        width: 106px;
+        height: 106px;
+        &::before {
+            position: absolute;
+            content: '';
+            inset-block-start: 0;
+            inset-inline-start: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 40px;
+            background: #5C2BFF;
+            z-index: -1;
+        }
+        &::after {
+            position: absolute;
+            content: '';
+            inset-block-start: 50%;
+            inset-inline-start: 50%;
+            transform: translate(-50%, -50%);
+            width: 72px;
+            height: 72px;
+            border-radius: 28px;
+            background: linear-gradient(84deg, #8A62FB 4.85%, #00B8D9 95.15%);
+            z-index: -1;
+        }
+        img {
+            max-width: 40px;
+            max-height: 30px;
+        }
+    }
+}

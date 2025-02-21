@@ -1,0 +1,19 @@
+@use "../global" as *;
+.testimonial-section-3 {
+	position: relative;
+	isolation: isolate;
+	background-image: url(../img/testimonial-section-3-bg.png);
+	background-size: cover;
+	background-position: center bottom;
+	background-repeat: no-repeat;
+	&::after {
+		@include screen(md) {
+			content: url(../img/testimonial-section-3-el-1.png);
+			position: absolute;
+			inset-inline-start: 0;
+			inset-block-end: 10%;
+			z-index: -1;
+			pointer-events: none;
+		}
+	}
+}

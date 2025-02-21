@@ -1,0 +1,55 @@
+@use "../global" as *;
+
+.testimonial-section-4 {
+    position: relative;
+    z-index: 1;
+    .testimonial-4-shape {
+        position: absolute;
+        z-index: -1;
+        display: none;
+        @include screen(sm) {
+            display: block;
+        }
+        &-circle {
+            inset-block-start: 0;
+            inset-inline-start: 50%;
+            transform: translateX(-50%);
+        }
+        &-dots {
+            inset-block-start: -34%;
+            inset-inline-start: 50%;
+            transform: translateX(-50%);
+            z-index: -2;
+        }
+    }
+}
+
+.testimonial-4-card {
+    position: relative;
+    z-index: 1;
+    border-radius: rem(15);
+    border: 1px solid #191C1D;
+    background: rgba(0, 0, 0, 0.40);
+    width: 350px;
+    @include screen(xl) {
+        width: 535px;
+    }
+    &:hover {
+        p {
+            color: #C4C7C7;
+        }
+    }
+    &::before {
+        position: absolute;
+        content: '';
+        inset-block-start: 0;
+        inset-inline-end: 0;
+        width: 310px;
+        height: 182px;
+        background-repeat: no-repeat;
+        z-index: -1;
+    }
+    p {
+        transition: all 0.3s;
+    }
+}

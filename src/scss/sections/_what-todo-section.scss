@@ -1,0 +1,15 @@
+@use "../global" as *;
+.what-todo-section {
+    position: relative;
+    isolation: isolate;
+    &::after {
+        @include screen(xxl) {
+            content: url(../img/todo-section-shape.webp);
+            position: absolute;
+            inset-inline-end: 0;
+            inset-block-end: 0;
+            z-index: -1;
+            pointer-events: none;
+        }
+    }
+}

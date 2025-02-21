@@ -1,0 +1,6 @@
+@use "../global" as *;
+.doc-content {
+	@include screen(lg) {
+		flex-grow: 1;
+	}
+}

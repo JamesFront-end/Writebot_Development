@@ -1,0 +1,114 @@
+@use "../global" as *;
+
+.ai-tools-section {
+	position: relative;
+	isolation: isolate;
+	padding-block-end: rem(90);
+	@include screen(sm) {
+		padding-block-end: rem(120);
+	}
+
+	.ai-tools-section-top-shape,
+	.ai-tools-section-top-right-shape,
+	.ai-tools-section-left-shape,
+	.ai-tools-section-left-start,
+	.ai-tools-section-right-start,
+	.ai-tools-section-bottom-shape,
+	.ai-tools-section-bottom-layer-shape {
+		position: absolute;
+		z-index: -1;
+	}
+	.ai-tools-section-top-shape {
+		inset-block-start: 0;
+		inset-inline-start: 50%;
+		transform: translateX(-50%);
+	}
+
+	.ai-tools-section-top-right-shape {
+		inset-block-start: 0;
+		inset-inline-end: 0;
+	}
+	.ai-tools-section-left-shape {
+		inset-block-start: 0;
+		inset-inline-start: 0;
+	}
+	.ai-tools-section-bottom-shape {
+		inset-block-end: 50px;
+		inset-inline-start: 50%;
+		transform: translateX(-50%);
+		z-index: -2;
+		display: none;
+		@include screen(lg) {
+			display: block;
+			inset-block-end: 0;
+		}
+	}
+	.ai-tools-section-bottom-layer-shape {
+		inset-block-end: -15%;
+		inset-inline-start: 50%;
+		transform: translateX(-50%);
+		z-index: -3;
+		display: none;
+		@include screen(sm) {
+			display: block;
+			inset-block-end: -9%;
+		}
+		@include screen(md) {
+			inset-block-end: -23%;
+		}
+		@include screen(lg) {
+			inset-block-end: -28%;
+		}
+		@include screen(xl) {
+			inset-block-end: -10%;
+		}
+		@include screen(xxl) {
+			inset-block-end: 2%;
+		}
+	}
+	.ai-tools-section-left-start {
+		inset-block-start: 30%;
+		inset-inline-start: 8%;
+	}
+
+	.ai-tools-section-right-start {
+		inset-block-start: 22%;
+		inset-inline-end: 6%;
+	}
+}
+
+.ai-tools-card {
+	border-radius: 24px;
+	border: 1px solid rgba(#48454e, 0.5);
+	background: rgba(#101415, 0.5);
+	isolation: isolate;
+	position: relative;
+	&:hover {
+		border-color: rgba(#48454e, 0.7);
+	}
+	.ai-tools-card-shape {
+		position: absolute;
+		inset-block-start: 0;
+		inset-inline-start: 50%;
+		transform: translateX(-50%);
+		z-index: -1;
+	}
+	.ai-tools-card-globe {
+		position: relative;
+		.ai-tools-card-flag {
+			position: absolute;
+			inset-block-start: 50%;
+			inset-inline-start: 50%;
+			transform: translate(-50%, -50%);
+		}
+	}
+}
+
+.img-gray {
+	filter: grayscale(1);
+	-webkit-filter: grayscale(1);
+}
+
+.text-anim div {
+	display: inline-block;
+}

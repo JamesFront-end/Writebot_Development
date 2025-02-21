@@ -1,0 +1,103 @@
+@use "../global" as *;
+.choose-section-1 {
+	@include screen(xl) {
+		padding-block-start: clamp(3.75rem, 6.5vw + 1rem, 7.5rem);
+		padding-block-end: clamp(3.75rem, 6.5vw + 1rem, 7.5rem);
+		position: relative;
+		z-index: 1;
+	}
+	@include screen(xxl) {
+		padding-block-start: 12.5rem;
+	}
+	&__card {
+		@include screen(lg) {
+			position: relative;
+			isolation: isolate;
+			background: linear-gradient(180deg, #0b0f0f 68.54%, rgba(11, 15, 15, 0) 86.92%);
+			&::after {
+				content: "";
+				position: absolute;
+				inset: 0;
+				border: 1px solid transparent;
+				border-radius: inherit;
+				background: linear-gradient(hsl(var(--neutral-30)), transparent) border-box;
+				-webkit-mask: linear-gradient(hsl(var(--black)) 0 0) padding-box, linear-gradient(hsl(var(--black)) 0 0);
+				-webkit-mask-composite: xor;
+				mask-composite: exclude;
+				z-index: -1;
+			}
+		}
+	}
+	&__img {
+		@include screen(xl) {
+			position: absolute;
+			top: 50%;
+			z-index: -1;
+			pointer-events: none;
+		}
+		&--1 {
+			@include screen(xl) {
+				inset-inline-start: 50%;
+				transform: rotate(-9deg) translate(-125%, -65%);
+			}
+		}
+		&--2 {
+			@include screen(xl) {
+				right: 50%;
+				transform: rotate(9deg) translate(125%, -65%);
+			}
+		}
+	}
+	&__shape {
+		display: none;
+		@include screen(xxl) {
+			display: block;
+			position: absolute;
+			z-index: -1;
+			&--1 {
+				top: 0;
+				inset-inline-start: 50%;
+				transform: translateX(-50%);
+			}
+			&--2 {
+				top: 100%;
+				inset-inline-start: -35%;
+			}
+			&--3 {
+				top: 100%;
+				inset-inline-start: 50%;
+				transform: translateX(-50%);
+			}
+			&--4 {
+				top: 100%;
+				inset-inline-end: -35%;
+			}
+		}
+	}
+	&__title {
+		display: none;
+		@include screen(xxl) {
+			display: block;
+			position: absolute;
+			inset-block-start: 5%;
+			inset-inline-start: 0;
+			transform: rotate(-9deg);
+		}
+	}
+	&__play-btn {
+		display: none;
+		@include screen(xxl) {
+			display: grid;
+			place-content: center;
+			width: rem(44);
+			height: rem(44);
+			border: none;
+			border-radius: 50%;
+			background-color: hsl(var(--primary-key));
+			color: hsl(var(--white));
+			position: absolute;
+			inset-block-start: 7%;
+			inset-inline-start: 20%;
+		}
+	}
+}

@@ -1,0 +1,7 @@
+.text-outline {
+    --outline-clr: hsl(var(--white) / 0.75);
+	-webkit-text-fill-color: transparent;
+	-webkit-text-stroke-width: 1px;
+    -webkit-background-clip: text;
+	-webkit-text-stroke-color: var(--outline-clr);
+}

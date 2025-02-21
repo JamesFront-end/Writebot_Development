@@ -1,0 +1,238 @@
+@use "../global" as *;
+
+.feature-section-2 {
+    position: relative;
+    isolation: isolate;
+    .feature-2-top-shape {
+        position: absolute;
+        z-index: -1;
+        inset-block-start: 0;
+        inset-inline-start: 50%;
+        transform: translateX(-50%);
+    }
+    .feature-2-shape {
+        position: absolute;
+        z-index: -1;
+        display: none;
+        @include screen(sm) {
+            display: block;
+        }
+        &-1 {
+            inset-block-start: 0;
+            inset-inline-start: 0;
+        }
+        &-2 {
+            inset-block-start: 5%;
+            inset-inline-end: 0;
+        }
+        &-3 {
+            inset-block-end: 0;
+            inset-inline-start: 2%;
+        }
+        &-4 {
+            inset-block-end: 0;
+            inset-inline-end: 2%;
+        }
+    }
+}
+
+.feature-2-tabs {
+    border: 1px solid rgba(#48454E, 0.5);
+    background-color: rgba(#101415, 0.07);
+    border-radius: rem(24);
+    position: relative;
+    &::before,
+    &::after {
+        position: absolute;
+        content: '';
+        inset-block-end: -55px;
+        width: 109px;
+        height: 36px;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    &::before {
+        inset-inline-start: 20px;
+        background-image: url(../img/feature-2-tab-left.svg);
+        @include screen(sm) {
+            inset-inline-start: 50px;
+        }
+        @include screen(md) {
+            inset-inline-start: 110px;
+        }
+    }
+    &::after {
+        inset-inline-end: 20px;
+        background-image: url(../img/feature-2-tab-right.svg);
+        @include screen(sm) {
+            inset-inline-end: 50px;
+        }
+        @include screen(md) {
+            inset-inline-end: 110px;
+        }
+    }
+    .nav-item {
+        padding: rem(6) rem(10);
+        @include screen(md) {
+            padding: rem(8) rem(15);
+        }
+        .nav-link {
+            width: rem(45);
+            height: rem(45);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(145, 158, 171, 0.12);
+            border-radius: 50%;
+            border: 1px solid #919EAB1F;
+            color: #C4C7C7;
+            padding: 0;
+            @include screen(md) {
+                width: rem(52);
+                height: rem(52);
+            }
+            i {
+                font-size: rem(20);
+                @include screen(md) {
+                    font-size: rem(24);
+                }
+            }
+            .nav-link-text {
+                display: inline-block;
+                opacity: 0;
+                position: absolute;
+                inset-block-end: -60px;
+                inset-inline-start: 50%;
+                transform: translateX(-50%);
+                background-color: rgba(86, 26, 255, 0.12);
+                border-radius: 12px;
+                padding: rem(10) rem(24);
+                color: #5C2BFF;
+                font-size: rem(14);
+                font-weight: 700;
+                transition: all 0.3s;
+            }
+            &.active {
+                border-color: #4400D9;
+                background-color: rgba(86, 26, 255, 0.24);
+                color: #fff;
+                .nav-link-text {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+.feature-2-tab-content {
+    .tab-pane {
+        &.show {
+            .row {
+                div[class*="col-"] {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        }
+        .row {
+            div[class*="col-"] {
+                opacity: 0;
+                transform: translateY(50px);
+                transition: all 0.5s;
+                @for $i from 1 through 20 {
+                    &:nth-child(#{$i}) {
+                        transition-delay: #{$i * .1}s;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.feature-2-card {
+    background-color: rgba(#101415, 0.5);
+    border-radius: rem(24);
+    &:hover {
+        .feature-2-card-thumb {
+            i {
+                &::after {
+                    background-color: #5C2BFF;
+                }
+            }
+        }
+        .feature-2-card-content {
+            background-color: rgba(86, 26, 255, 0.12);
+        }
+    }
+    &.style-big {
+        .feature-2-card-thumb {
+            height: 210px;
+            @include screen(sm) {
+                height: 275px;
+            }
+        }
+        .feature-2-card-content {
+            -webkit-mask-image: url('../img/feature-2-card-big-shape.svg');
+            mask-image: url('../img/feature-2-card-big-shape.svg');
+        }
+    }
+    .feature-2-card-thumb {
+        position: relative;
+        height: 180px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid rgba(#48454E, 0.5);
+        border-bottom: none;
+        border-radius: rem(24) rem(24) 0 0;
+        z-index: 1;
+        transition: all 0.3s;
+        @include screen(sm) {
+            height: 215px;
+        }
+        img {
+            z-index: -1;
+            max-height: 100%;
+        }
+        i {
+            position: absolute;
+            inset-block-end: -23px;
+            inset-inline-start: 50%;
+            transform: translateX(-50%);
+            width: 56px;
+            height: 56px;
+            color: #fff;
+            font-size: rem(28);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1;
+            &::after {
+                position: absolute;
+                content: '';
+                width: 100%;
+                height: 100%;
+                inset: 0;
+                background-color: rgba(145, 158, 171, 0.12);
+                border-radius: 50%;
+                z-index: -1;
+                transition: all 0.3s;
+            }
+        }
+    }
+    .feature-2-card-content {
+        position: relative;
+        z-index: 1;
+        padding: rem(50) rem(30);
+        -webkit-mask-image: url('../img/feature-2-card-shape.svg');
+        mask-image: url('../img/feature-2-card-shape.svg');
+        -webkit-mask-repeat: no-repeat;
+        -webkit-mask-size: cover;
+        mask-repeat: no-repeat; 
+        -webkit-mask-position-x: center;
+        background-color: rgba(145, 158, 171, 0.08);
+        backdrop-filter: blur(10px);
+        border-radius: 0 0 rem(24) rem(24);
+        overflow: hidden;
+    }
+}
